@@ -53,7 +53,7 @@ const CardBody = ({
         </div>
       ) : (
         <p className={`${styles["card-body__last-used"]}`}>
-          Last used: {lastUsed || "Used dalily"}
+          Last used: {usedDaily ? "Used dalily" : lastUsed}
         </p>
       )}
       {!edit ? (

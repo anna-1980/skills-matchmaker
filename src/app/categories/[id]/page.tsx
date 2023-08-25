@@ -14,9 +14,10 @@ export interface SkillProps {
   skill_id: number;
   skillName: string;
   skillLevel: number;
-  last_used: string;
   usedDaily: boolean;
   comment: string;
+  year: string;
+  month: string;
 }
 export interface NewSkillProps {
   skill_id: string;
@@ -108,7 +109,8 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
                 skill_id,
                 skillName,
                 skillLevel,
-                last_used,
+                year,
+                month,
                 usedDaily,
                 comment,
               }: SkillProps) => {
@@ -118,7 +120,7 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
                     usedDaily={usedDaily ? usedDaily : false}
                     skillName={skillName}
                     skillLevel={skillLevel}
-                    lastUsed={last_used}
+                    lastUsed={month + " " + year}
                     comment={comment}
                   />
                 );
