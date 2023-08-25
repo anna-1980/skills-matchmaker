@@ -1,0 +1,22 @@
+[
+  {
+    "skill_id": "2023-08-25T18:55:39.546Z",
+    "category": "frontend",
+    "skillName": "HTML",
+    "skillLevel": 3,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": false,
+    "comment": "Add some comment about the skill"
+  },
+  {
+    "skill_id": "2023-08-25T19:50:02.845Z",
+    "category": "frontend",
+    "skillName": "CSS",
+    "skillLevel": 3,
+    "month": "July",
+    "year": "2015",
+    "usedDaily": false,
+    "comment": "I use it from time to time"
+  }
+]

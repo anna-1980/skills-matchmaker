@@ -7,7 +7,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     return path.join(process.cwd(), "data", "skills.json");
   };
 
-  const dataFeomFile = (filePath: string) => {
+  const dataFromFile = (filePath: string) => {
     const fileData = fs.readFileSync(filePath);
     const data = JSON.parse(fileData.toString());
     return data;
@@ -15,8 +15,8 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === "POST") {
     const category = req.body.category;
-    const skill = req.body.skill;
-    const skillLevel = req.body.skillLevel;
+    const skillName = req.body.skillName;
+    const level = req.body.skillLevel;
     const month = req.body.month;
     const year = req.body.year;
     const usedDaily = req.body.usedDaily;
@@ -26,8 +26,8 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     const newFormDataSent = {
       skill_id: new Date().toISOString(), //should return id for existing ones or null for new ones
       category: category,
-      skill: skill,
-      skillLevel: skillLevel,
+      skillName: skillName,
+      skillLevel: level,
       month: month,
       year: year,
       usedDaily: usedDaily,
@@ -36,7 +36,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
     // store in a file
     const filePath = fileFromPath();
-    const data = dataFeomFile(filePath);
+    const data = dataFromFile(filePath);
     data.push(newFormDataSent);
     fs.writeFileSync(filePath, JSON.stringify(data));
     res
@@ -44,8 +44,8 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
       .json({ message: "successfully sent", newFormData: newFormDataSent });
   } else {
     const filePath = fileFromPath();
-    const data = dataFeomFile(filePath);
-    res.status(200).json({ newSkills: data });
+    const data = dataFromFile(filePath);
+    res.status(200).json({ skills: data });
   }
 }
 

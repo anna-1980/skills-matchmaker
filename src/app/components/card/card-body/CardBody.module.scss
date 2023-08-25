@@ -21,7 +21,7 @@ $gap: 20px;
     display: flex;
     margin-left: toRem(30px);
     align-items: center;
-
+    flex: 1;
     &--edit {
       align-items: flex-start;
     }
@@ -60,6 +60,7 @@ $gap: 20px;
     &__textarea {
       padding: toRem(0px 30px);
     }
+ 
   }
 }
 
