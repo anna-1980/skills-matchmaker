@@ -10,7 +10,9 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const dropdownOptions = [
   { id: 1, name: "Beginner" },
+  { id: 2, name: "pre-Intermediate" },
   { id: 3, name: "Intermediate" },
+  { id: 4, name: "Advanced" },
   { id: 5, name: "Expert" },
 ];
 
@@ -45,7 +47,7 @@ export default function AddSkill() {
   const [formData, setFormData] = useState<EventData>({
     category: "",
     skillName: "",
-    skillLevel: 0,
+    skillLevel: 1,
     month: new Intl.DateTimeFormat("en", {
       month: "long",
       calendar: "gregory",
