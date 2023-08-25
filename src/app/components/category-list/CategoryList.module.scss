@@ -1,0 +1,55 @@
+@import "../../styles/index.scss";
+
+.categories-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    width: 100%;
+    margin-top: toRem(10px);
+
+    .categories-list__button {
+      justify-content: space-between;
+      text-decoration: none;
+    }
+  }
+}
+
+.add-skill-btn--bottom {
+  display: none;
+}
+
+@include breakpoint($layout-shift) {
+  .categories-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: toRem(20px);
+
+    &__item {
+      flex-basis: calc(25% - toRem(15px));
+      margin-top: 0;
+
+      .categories-list__button {
+        height: toRem(98px);
+        justify-content: center;
+      }
+
+      & > * > div {
+        display: none;
+      }
+
+      &:last-child > * > div {
+        display: inline-block;
+      }
+    }
+  }
+
+  .add-skill-btn--top {
+    display: none;
+  }
+
+  .add-skill-btn--bottom {
+    display: flex;
+  }
+}

@@ -1,0 +1,45 @@
+@import "../../styles/index.scss";
+
+.card {
+  height: toRem(58px);
+  overflow: hidden;
+  padding: toRem(0px 20px);
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--button-border-radius);
+  font-size: toRem(14px);
+
+  & + .card {
+    margin-top: toRem(15px);
+  }
+
+  &--opened {
+    height: auto;
+    padding-bottom: toRem(20px);
+  }
+
+  &__footer {
+    margin-top: toRem(24px);
+  }
+}
+
+@include breakpoint($layout-shift) {
+  .card {
+    font-size: toRem(16px);
+    height: auto;
+    padding: toRem(15px 25px);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    &--edit {
+      align-items: flex-start;
+    }
+
+    &__footer {
+      margin-left: auto;
+      margin-top: 0;
+    }
+  }
+}

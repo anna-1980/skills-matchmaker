@@ -1,0 +1,12 @@
+@import "../../styles/index.scss";
+
+.star__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  & > div + div {
+    margin-left: toRem(2px);
+  }
+}

@@ -1,0 +1,10 @@
+@import "../styles/index.scss";
+
+.noResultsImage {
+    display: block;
+    margin: toRem(200px) auto;
+    height: 50vw;
+    width: 50vw;
+    max-width: toRem(500px);
+    max-height: toRem(500px);
+}

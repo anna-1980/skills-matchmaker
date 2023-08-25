@@ -1,0 +1,33 @@
+@import "../../../styles/index.scss";
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__buttons {
+    display: flex;
+  }
+
+  &__buttons--cancel,
+  &__buttons--check {
+    width: toRem(60px);
+    height: toRem(60px);
+    margin-left: toRem(16px);
+  }
+  &__buttons--show {
+    width: toRem(60px);
+    height: toRem(60px);
+  }
+}
+
+@include breakpoint($layout-shift) {
+  .card-footer {
+    align-items: center;
+    justify-content: flex-end;
+
+    &__buttons--delete {
+      display: none;
+    }
+  }
+}

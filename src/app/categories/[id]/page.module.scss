@@ -1,0 +1,59 @@
+@import "../../styles/index.scss";
+
+.skills-page {
+  padding-bottom: toRem(120px);
+
+  @include breakpoint($layout-shift) {
+    padding-bottom: 0;
+  }
+}
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &__heading {
+    color: var(--color-secondary-dark);
+  }
+
+  &__btn {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    padding: toRem(20px);
+    background-color: white;
+    box-shadow: toRem(0px 4px 10px) rgba(0, 0, 0, 0.1);
+
+    button {
+      div {
+        margin-right: toRem(10px);
+      }
+    }
+  }
+
+  &__category-list {
+    flex-basis: 100%; 
+  }
+}
+
+@include breakpoint($layout-shift) {
+  .skills {
+    &__btn {
+      position: unset;
+      padding: 0;
+      flex-basis: 30%;
+      align-self: flex-end;
+      box-shadow: none;
+      background-color: transparent;
+      button {
+        div {
+          margin-right: toRem(10px);
+        }
+      }
+    }
+  }
+}

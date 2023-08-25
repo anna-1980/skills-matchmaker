@@ -1,0 +1,33 @@
+@import "../../styles/index.scss";
+
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  &__input {
+    width: 100%;
+
+    @include breakpoint($layout-shift) {
+      width: 50%;
+    }
+
+    input {
+      background-color: var(--color-secondary);
+      border: toRem(1px) solid var(--color-secondary);
+      color: #fff;
+
+      &::placeholder {
+        opacity: 0.5;
+        color: #fff;
+      }
+
+      &:focus-visible {
+        outline-color: #fff;
+        border: toRem(1px) solid #fff;
+        transition: border 0.35s;
+        transition-timing-function: cubic-bezier(0.2, 1, 1);
+      }
+    }
+  }
+}

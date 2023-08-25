@@ -1,0 +1,53 @@
+@import "../../../styles/index.scss";
+
+.card-header {
+  display: flex;
+  align-items: center;
+  height: toRem(58px);
+
+  &__skill {
+    font-weight: bold;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  &__skills-level {
+    display: flex;
+    flex-direction: column;
+    margin-left: toRem(16px);
+  }
+
+  &__stars {
+    margin: auto 0;
+    align-self: center;
+  }
+
+  &__level-select {
+    width: 100%;
+    display: none;
+  }
+
+  &__toggle {
+    margin: toRem(0px -15px 0px 10px);
+    position: relative;
+    padding: toRem(10px);
+  }
+}
+
+@include breakpoint($layout-shift) {
+  .card-header {
+    flex-basis: 30%;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    height: auto;
+
+    &__toggle {
+      display: none;
+    }
+
+    &__level-select {
+      display: block;
+      margin-bottom: toRem(10px);
+    }
+  }
+}

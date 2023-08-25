@@ -1,0 +1,82 @@
+@import "../../styles/index.scss";
+
+.input-autocomplete {
+  .custom-select {
+    font-size: inherit;
+    font-family: inherit;
+
+    &__value-container {
+      padding: 0;
+      margin: 0;
+    }
+
+    &__input-container {
+      padding: 0;
+    }
+
+    &__placeholder {
+      color: var(--color-secondary-light);
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    &__control {
+      border-radius: toRem(5px);
+      border: solid toRem(1px) var(--color-secondary-light);
+      width: 100%;
+      padding: toRem(10px 16px);
+      background-color: white;
+      cursor: text;
+
+      &--menu-is-open {
+        border: transparent;
+        outline: none;
+        border: solid toRem(1px) var(--color-secondary-light);
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      &--is-focused {
+        outline: none;
+        position: relative;
+        &::before {
+          content: "";
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          left: 0;
+          border-radius: toRem(5px);
+          outline: toRem(2px) dashed var(--color-secondary-light);
+          outline-offset: toRem(-4px);
+        }
+
+        box-shadow: none;
+      }
+    }
+
+    &__menu {
+      margin-top: 0;
+    }
+
+    &__option {
+      background-color: white;
+      color: black;
+    }
+
+    &__option--is-focused {
+      background-color: var(--color-secondary-light);
+      color: white;
+    }
+
+    &__option--is-selected {
+      background-color: var(--color-secondary-light);
+      color: white;
+    }
+
+    &__indicator {
+      display: none;
+    }
+  }
+}

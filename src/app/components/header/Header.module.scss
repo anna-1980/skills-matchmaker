@@ -1,0 +1,30 @@
+@import "../../styles/index.scss";
+$headerHeight: toRem(90px);
+
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  height: $headerHeight;
+  width: 100%;
+  background-color: var(--color-primary);
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo-container {
+    height: toRem(60px);
+    margin-right: 25px;
+    display: inline-block;
+  }
+
+  &__logo {
+    height: 100%;
+    width: 100%;
+  }
+}

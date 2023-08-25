@@ -1,0 +1,81 @@
+@import "../styles/index.scss";
+
+.login-page {
+  background-color: var(--color-primary);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint($layout-shift) {
+    flex-direction: row;
+  }
+
+  &__branding {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    justify-content: center;
+  }
+
+  &__logo {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    @include breakpoint($layout-shift) {
+      width: 30%;
+    }
+  }
+
+  &__welcome-text {
+    color: white;
+    font-family: inherit;
+    width: 320px;
+    margin: 0 auto;
+    padding: toRem(20px 20px);
+  }
+
+  &__first-welcome-text {
+    display: block;
+    text-align: left;
+    font-size: toRem(20px);
+    font-weight: lighter;
+    margin-bottom: toRem(10px);
+  }
+
+  &__second-welcome-text {
+    display: block;
+    text-align: center;
+    font-size: toRem(32px);
+    font-weight: bold;
+    padding-right: toRem(32px);
+    margin-bottom: toRem(10px);
+  }
+
+  &__third-welcome-text {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    font-size: toRem(26px);
+  }
+
+  &__form {
+    width: 100%;
+    @include breakpoint($layout-shift) {
+      flex-basis: 50%;
+      padding: toRem(0px 30px);
+    }
+  }
+
+  &__form-field {
+    margin-bottom: toRem(60px);
+  }
+
+  &__bottom-text {
+    color: var(--color-secondary);
+    font-size: toRem(12px);
+    text-align: center;
+    line-height: 1.5;
+  }
+}

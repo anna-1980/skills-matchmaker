@@ -1,0 +1,150 @@
+@import "../../styles/index.scss";
+
+.btn {
+  @include outline-focus(var(--color-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: toRem(16px 20px 18px);
+  font-size: var(--button-base-font-size);
+  font-family: inherit;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  appearance: none;
+  text-decoration: none;
+
+  &:active {
+    box-shadow: inset toRem(0px 2px 3px) rgba(#000, 0.15);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &--icon {
+    border-radius: var(--button-icon-size);
+    padding: toRem(16px);
+  }
+
+  &--small {
+    padding: toRem(8px 8px 9px);
+    font-size: toRem(12px);
+  }
+
+  &--large {
+    padding: toRem(24px 24px 26px);
+    font-size: toRem(20px);
+  }
+
+  &--expanded {
+    min-width: 100%;
+    display: flex;
+  }
+
+  &--clean {
+    all: initial;
+    cursor: pointer;
+    appearance: none;
+  }
+
+  &--accent,
+  &--tertiary {
+    color: var(--color-secondary-dark);
+  }
+
+  &--primary {
+    &:focus-visible {
+      outline-color: #fff;
+    }
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+
+    &:hover {
+      background: linear-gradient(
+        var(--color-secondary-light),
+        var(--color-secondary)
+      );
+    }
+
+    &:active {
+      background: linear-gradient(
+        var(--color-secondary),
+        var(--color-secondary-light)
+      );
+    }
+
+    &:focus-visible {
+      outline-color: #fff;
+    }
+  }
+
+  &--accent {
+    background-color: var(--color-accent);
+
+    &:hover {
+      background: linear-gradient(
+        var(--color-accent-light),
+        var(--color-accent)
+      );
+    }
+
+    &:active {
+      background: linear-gradient(
+        var(--color-accent),
+        var(--color-accent-light)
+      );
+      box-shadow: inset toRem(0px 2px 3px) rgba(#000, 0.15);
+    }
+  }
+
+  &--tertiary {
+    background-color: var(--color-tertiary);
+
+    &:hover {
+      background: linear-gradient(
+        var(--color-tertiary),
+        var(--color-tertiary-dark)
+      );
+    }
+
+    &:active {
+      background: linear-gradient(
+        var(--color-tertiary-dark),
+        var(--color-tertiary)
+      );
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    color: var(--color-secondary-dark);
+    padding: toRem(10px);
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  &__label {
+    line-height: 1;
+  }
+
+  svg {
+    position: relative;
+    top: toRem(2px);
+  }
+}
+
+.icon-left-side {
+  margin-right: toRem(5px);
+}
+
+.icon-right-side {
+  margin-left: toRem(5px);
+}

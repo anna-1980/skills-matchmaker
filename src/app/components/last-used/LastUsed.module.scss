@@ -1,0 +1,23 @@
+@import "../../styles/index.scss";
+
+$gap: 20px;
+
+.last-used {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  width: 100%;
+
+  &__year {
+    flex-basis: calc(50% - toRem($gap / 2));
+    margin-left: toRem($gap);
+  }
+
+  &__month {
+    flex-basis: calc(50% - toRem($gap / 2));
+  }
+
+  &__used-daily {
+    margin-top: toRem(10px);
+  }
+}

@@ -1,0 +1,66 @@
+@import "../../../styles/index.scss";
+
+$gap: 20px;
+
+.card-body {
+  @include content();
+
+  &__skill-level,
+  &__date-edit {
+    display: flex;
+    margin-bottom: toRem($gap);
+  }
+
+  &__last-used {
+    font-style: italic;
+  }
+}
+
+@include breakpoint($layout-shift) {
+  .card-body {
+    display: flex;
+    margin-left: toRem(30px);
+    align-items: center;
+
+    &--edit {
+      align-items: flex-start;
+    }
+
+    &__skill-level {
+      display: none;
+    }
+
+    &__date {
+      margin: 0 toRem($gap);
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    &__date-edit {
+      flex-basis: 50%;
+    }
+
+    &__textarea {
+      flex-grow: 1;
+    }
+
+    &__last-used,
+    &__comment {
+      margin: 0;
+    }
+
+    &__last-used {
+      flex-shrink: 0;
+      flex-basis: toRem(180px);
+    }
+
+    &__comment,
+    &__textarea {
+      padding: toRem(0px 30px);
+    }
+  }
+}
+
+

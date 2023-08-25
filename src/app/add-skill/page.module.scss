@@ -1,0 +1,61 @@
+@import "../styles/index.scss";
+
+.page-title {
+  font-size: toRem(24px);
+  margin: toRem(0px 0px 10px 0px);
+}
+
+.page-content {
+  margin: toRem(10px) auto 0 auto;
+
+  > * + * {
+    margin-top: toRem(10px);
+  }
+
+  @include breakpoint($layout-shift) {
+    max-width: 50%;
+    margin-top: toRem(30px);
+  }
+
+  &__last-used {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    &--month {
+      flex-basis: 48%;
+    }
+
+    &--year {
+      flex-basis: 48%;
+    }
+
+    &--regular {
+      margin: toRem(20px 0px 10px 20px);
+    }
+  }
+
+  &__buttons {
+    margin-top: toRem(20px);
+    display: flex;
+    flex-direction: column;
+
+    a {
+      text-decoration: none;
+    }
+
+    &--add {
+      margin-bottom: toRem(20px);
+    }
+
+    @include breakpoint($layout-shift) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+
+      &--add,
+      &--cancel {
+        flex-basis: 48%;
+      }
+    }
+  }
+}

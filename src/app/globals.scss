@@ -1,0 +1,61 @@
+@import "styles/index.scss";
+@import "styles/fonts.scss";
+
+:root {
+  --color-primary: #002c49;
+  --color-secondary: #506d85;
+  --color-secondary-dark: #17233d;
+  --color-secondary-light: #7f9db6;
+  --color-tertiary: #c5e5e8;
+  --color-tertiary-dark: #6bc9d1;
+  --color-accent: #fcb118;
+  --color-accent-light: #ffdda1;
+  --color-background: #f0f0f0;
+
+  --box-shadow: toRem(0px 4px 4px) rgba(0, 0, 0, 0.1);
+  --box-shadow-hover: toRem(1px 5px 6px) rgba(0, 0, 0, 0.05);
+
+  --button-base-height: #{toRem(50px)};
+  --button-base-font-size: #{toRem(16px)};
+  --button-icon-size: #{toRem(44px)};
+  --button-border-radius: #{toRem(5px)};
+}
+
+html {
+  font-family: "Segoe UI";
+  background-color: var(--color-background);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.constraint,
+main {
+  @include content();
+  max-width: toRem(1280px);
+  margin: 0 auto;
+  padding: toRem(24px $page-indentation-small);
+
+  @include breakpoint($layout-shift) {
+    padding: toRem(24px $page-indentation-large);
+  }
+}
+
+h1 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: toRem(24px);
+  color: var(--color-primary);
+}
+
+hr {
+  margin: toRem(14px) -#{toRem($page-indentation-small)};
+  border: 0;
+  border-top: toRem(1px) solid #c0c0c0;
+
+  @include breakpoint($layout-shift) {
+    margin: toRem(20px) 0;
+  }
+}

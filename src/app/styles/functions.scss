@@ -1,0 +1,42 @@
+@use "sass:math";
+
+@function toRem($values) {
+  $rem-values: ();
+  $count: length($values);
+  @if $count == 1 {
+    @return valueToRem($values);
+  }
+
+  @for $i from 1 through $count {
+    $rem-values: append($rem-values, valueToRem(nth($values, $i)));
+  }
+
+  @return $rem-values;
+}
+
+@function valueToRem($value) {
+  @return math.div($value, 16px) * 1rem;
+}
+
+@mixin outline-focus($color) {
+  &:focus-visible {
+    outline: toRem(2px) dashed $color;
+    outline-offset: toRem(-4px);
+  }
+}
+
+@mixin content() {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin breakpoint($breakpoint) {
+  @media (min-width: toRem($breakpoint)) {
+    @content;
+  }
+}

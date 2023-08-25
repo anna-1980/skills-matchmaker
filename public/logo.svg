@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 380">
+  <defs>
+    <linearGradient id="linear-gradient" x1="150.01" y1="360.91" x2="150.01" y2="248.39" gradientTransform="translate(0 382) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#b2b2b2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="150.01" y1="241.9" x2="150.01" y2="50.9" gradientTransform="translate(0 382) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#b2b2b2"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="72.67" y1="152.89" x2="72.67" y2="58.26" gradientTransform="translate(0 382) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcea10"/>
+      <stop offset="1" stop-color="#f9b233"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" x1="227.33" y1="152.89" x2="227.33" y2="58.26" gradientTransform="translate(0 382) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcea10"/>
+      <stop offset="1" stop-color="#f9b233"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="150" y1="146.96" x2="150" y2="23.09" gradientTransform="translate(0 382) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fcea10"/>
+      <stop offset="1" stop-color="#f9b233"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <g>
+      <circle cx="150.01" cy="77.35" r="56.26" style="fill: none; stroke: #fff; stroke-width: 30px;"/>
+      <circle cx="150.01" cy="235.6" r="95.5" style="fill: none; stroke: #fff; stroke-width: 30px;"/>
+    </g>
+    <g>
+      <circle cx="150.01" cy="77.35" r="56.26" style="fill: url(#linear-gradient); stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: 10px;"/>
+      <circle cx="150.01" cy="235.6" r="95.5" style="fill: url(#linear-gradient-2); stroke: #1d1d1b; stroke-miterlimit: 10; stroke-width: 10px;"/>
+    </g>
+  </g>
+  <g>
+    <polygon points="72.67 229.11 88.05 260.26 122.41 265.26 97.55 289.5 103.41 323.74 72.67 307.58 41.93 323.74 47.8 289.5 22.92 265.26 57.3 260.26 72.67 229.11" style="fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 30px;"/>
+    <polygon points="72.67 229.11 88.05 260.26 122.41 265.26 97.55 289.5 103.41 323.74 72.67 307.58 41.93 323.74 47.8 289.5 22.92 265.26 57.3 260.26 72.67 229.11" style="fill: url(#linear-gradient-3);"/>
+    <polygon points="72.67 229.11 88.05 260.26 122.41 265.26 97.55 289.5 103.41 323.74 72.67 307.58 41.93 323.74 47.8 289.5 22.92 265.26 57.3 260.26 72.67 229.11" style="fill: none; stroke: #1d1d1b; stroke-linecap: round; stroke-linejoin: round; stroke-width: 10px;"/>
+  </g>
+  <g>
+    <polygon points="227.33 229.11 242.7 260.26 277.08 265.26 252.2 289.5 258.08 323.74 227.33 307.58 196.58 323.74 202.46 289.5 177.58 265.26 211.97 260.26 227.33 229.11" style="fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 30px;"/>
+    <polygon points="227.33 229.11 242.7 260.26 277.08 265.26 252.2 289.5 258.08 323.74 227.33 307.58 196.58 323.74 202.46 289.5 177.58 265.26 211.97 260.26 227.33 229.11" style="fill: url(#linear-gradient-4);"/>
+    <polygon points="227.33 229.11 242.7 260.26 277.08 265.26 252.2 289.5 258.08 323.74 227.33 307.58 196.58 323.74 202.46 289.5 177.58 265.26 211.97 260.26 227.33 229.11" style="fill: none; stroke: #1d1d1b; stroke-linecap: round; stroke-linejoin: round; stroke-width: 10px;"/>
+  </g>
+  <g>
+    <polygon points="150.01 235.04 170.13 275.82 215.13 282.35 182.57 314.09 190.25 358.91 150.01 337.75 109.76 358.91 117.44 314.09 84.88 282.35 129.88 275.82 150.01 235.04" style="fill: none; stroke: #fff; stroke-linecap: round; stroke-linejoin: round; stroke-width: 30px;"/>
+    <polygon points="150.01 235.04 170.13 275.82 215.13 282.35 182.57 314.09 190.25 358.91 150.01 337.75 109.76 358.91 117.44 314.09 84.88 282.35 129.88 275.82 150.01 235.04" style="fill: url(#linear-gradient-5);"/>
+    <polygon points="150.01 235.04 170.13 275.82 215.13 282.35 182.57 314.09 190.25 358.91 150.01 337.75 109.76 358.91 117.44 314.09 84.88 282.35 129.88 275.82 150.01 235.04" style="fill: none; stroke: #1d1d1b; stroke-linecap: round; stroke-linejoin: round; stroke-width: 10px;"/>
+  </g>
+</svg>

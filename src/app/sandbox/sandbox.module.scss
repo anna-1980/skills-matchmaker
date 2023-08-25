@@ -1,0 +1,23 @@
+@import "../styles/index.scss";
+
+.change-size__large {
+  width: 150px;
+  height: 150px;
+  background-color: yellow;
+  color: green;
+}
+
+.font-test {
+  color: green;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.input__icon {
+  height: 1rem;
+  width: 1rem;
+  position: absolute;
+  top: 50%;
+  margin-top: -0.5rem;
+  left: 1rem;
+}

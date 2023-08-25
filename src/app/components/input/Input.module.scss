@@ -1,0 +1,49 @@
+@import "../../styles/index.scss";
+
+.input {
+  &__field {
+    position: relative;
+
+    &--icon-left,
+    &--icon-right {
+      position: absolute;
+      top: 50%;
+      margin-top: toRem(-8px);
+    }
+
+    &--icon-left {
+      left: toRem(16px);
+    }
+
+    &--icon-right {
+      right: toRem(16px);
+    }
+  }
+
+  &__control {
+    padding: toRem(12px 16px);
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+    line-height: 1.25;
+    border-radius: toRem(5px);
+    border: solid toRem(1px) var(--color-secondary-light);
+    background-color: #fff;
+
+    &::placeholder {
+      color: var(--color-secondary-light);
+      opacity: 0.8;
+      font-style: italic;
+    }
+
+    @include outline-focus(var(--color-secondary-light));
+
+    &--icon-left {
+      padding-left: toRem(46px);
+    }
+
+    &--icon-right {
+      padding-right: toRem(46px);
+    }
+  }
+}

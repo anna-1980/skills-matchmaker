@@ -1,0 +1,46 @@
+[
+  {
+    "category_id": 1,
+    "id": 1,
+    "skills": [
+      {
+        "skill_id": 1,
+        "name": "HTML",
+        "level": 5,
+        "last_used": "2020-01-01",
+        "usedDaily": true,
+        "comment": "I like it"
+      },
+      {
+        "skill_id": 2,
+        "name": "CSS",
+        "level": 5,
+        "last_used": "2020-01-01",
+        "usedDaily": true,
+        "comment": "I like it"
+      }
+    ]
+  },
+  {
+    "category_id": 2,
+    "id": 2,
+    "skills": [
+      {
+        "skill_id": 1,
+        "name": "C#",
+        "level": 5,
+        "last_used": "2020-01-01",
+        "usedDaily": true,
+        "comment": "I like it"
+      },
+      {
+        "skill_id": 2,
+        "name": "Java",
+        "level": 5,
+        "last_used": "2020-01-01",
+        "usedDaily": true,
+        "comment": "I like it"
+      }
+    ]
+  }
+]

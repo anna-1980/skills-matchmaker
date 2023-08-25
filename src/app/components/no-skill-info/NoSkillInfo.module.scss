@@ -1,0 +1,25 @@
+@import "../../styles/index.scss";
+
+.no-skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: toRem(50px 0px);
+
+  &__clipart {
+    width: toRem(200px);
+    height: auto;
+    filter: drop-shadow(toRem(5px 5px 5px) rgba(211, 211, 211, 1));
+    margin-bottom: toRem(20px);
+    @include breakpoint($layout-shift) {
+      width: toRem(250px);
+    }
+  }
+
+  &__txt {
+    font-family: inherit;
+    color: var(--color-primary-dark);
+    margin-bottom: 0;
+  }
+}

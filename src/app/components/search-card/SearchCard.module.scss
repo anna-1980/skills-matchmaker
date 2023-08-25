@@ -1,0 +1,24 @@
+@import "../../styles/index.scss";
+
+.searchCard {
+  padding: toRem(20px);
+  background-color: white;
+
+  color: var(--color-primary);
+
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  & + .searchCard {
+    margin-top: toRem(15px);
+  }
+
+  &--opened {
+    height: auto;
+  }
+}
+
+@include breakpoint($layout-shift) {
+  .searchCard {
+    padding: toRem(20px 30px);
+  }
+}
