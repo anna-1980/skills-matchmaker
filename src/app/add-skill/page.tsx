@@ -7,7 +7,6 @@ import Button from "../components/button/Button";
 import { useEffect, useState } from "react";
 import LastUsed from "../components/last-used/LastUsed";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { createSourceFile } from "typescript";
 
 const dropdownOptions = [
   { id: 1, name: "Beginner" },
@@ -22,7 +21,7 @@ interface SkillList {
 
 interface EventData {
   category: string;
-  skill: string;
+  skillName: string;
   skillLevel: number;
   month: string;
   year: string;
@@ -45,7 +44,7 @@ export default function AddSkill() {
   const [isLoadingCategories, setIsLoadingCategories] = useState(true);
   const [formData, setFormData] = useState<EventData>({
     category: "",
-    skill: "",
+    skillName: "",
     skillLevel: 0,
     month: new Intl.DateTimeFormat("en", {
       month: "long",
@@ -117,7 +116,7 @@ export default function AddSkill() {
     setFormData((prevState) => {
       return {
         ...prevState,
-        ["skill"]: event.name ? event.name : event,
+        ["skillName"]: event.name ? event.name : event,
       };
     });
   };
@@ -139,6 +138,7 @@ export default function AddSkill() {
     event.preventDefault();
 
     const requestBody = { ...formData };
+    console.log("requestBody", requestBody);
     fetch("/api/skills", {
       method: "POST",
       body: JSON.stringify(requestBody),

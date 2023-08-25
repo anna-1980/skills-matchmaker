@@ -12,8 +12,8 @@ interface pageParams {
 
 export interface SkillProps {
   skill_id: number;
-  name: string;
-  level: number;
+  skillName: string;
+  skillLevel: number;
   last_used: string;
   usedDaily: boolean;
   comment: string;
@@ -38,84 +38,47 @@ export interface NewSkillProps {
 // }
 
 const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
+  async function getSkills(id: string) {
+    let res = await fetch("http://localhost:3000/api/skills");
+    return res.json();
+  }
+
+  const { skills = {} } = use(getSkills(id));
+  console.log("newSkills", skills);
   // let { skills = {} } = use(getSkills(id));
   // and array with objects of skills
-  const [skillId, setSkillId] = React.useState<string>(id);
-  const [skills, setSkills] = React.useState<SkillProps[]>([]);
-  const [isLoading, setIsLoading] = React.useState(true);
 
-  const Skills = async (id: number) => {
-    try {
-      const res = await fetch(`../../skills.json`);
-      // console.log(res, "from Skills fetch");
-      const data = await res.json();
-      const skills = data.filter((skill: any) => skill.category_id === id)[0]
-        .skills;
-      console.log("skills", skills);
-      setSkills(skills);
-      if (skills && skills.length >= 1) {
-        setIsLoading(false);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const [skillId, setSkillId] = React.useState<string>(id);
+  // const [skills, setSkills] = React.useState<SkillProps[]>([]);
+  // const [isLoading, setIsLoading] = React.useState(true);
 
-  // let skills = [
-  //   {
-  //     skill_id: 1,
-  //     name: "HTML",
-  //     level: 5,
-  //     last_used: "2020-01-01",
-  //     usedDaily: true,
-  //     comment: "I like it",
-  //   },
-  //   {
-  //     skill_id: 2,
-  //     name: "CSS",
-  //     level: 4,
-  //     last_used: "2018-01-01",
-  //     usedDaily: true,
-  //     comment: "I like it",
-  //   },
-  //   {
-  //     skill_id: 3,
-  //     name: "JavaScript",
-  //     level: 3,
-  //     last_used: "2015-01-01",
-  //     usedDaily: true,
-  //     comment: "I like it",
-  //   },
-  //   {
-  //     skill_id: 4,
-  //     name: "React",
-  //     level: 2,
-  //     last_used: "2022-01-01",
-  //     usedDaily: true,
-  //     comment: "I like it",
-  //   },
-  //   {
-  //     skill_id: 5,
-  //     name: "Next.js",
-  //     level: 1,
-  //     last_used: "2023-01-01",
-  //     usedDaily: true,
-  //     comment: "I like it",
-  //   },
-  // ];
+  // const Skills = async (id: number) => {
+  //   try {
+  //     const res = await fetch(`../../skills.json`);
+  //     // console.log(res, "from Skills fetch");
+  //     const data = await res.json();
+  //     const skills = data.filter((skill: any) => skill.category_id === id)[0]
+  //       .skills;
+  //     console.log("skills", skills);
+  //     setSkills(skills);
+  //     if (skills && skills.length >= 1) {
+  //       setIsLoading(false);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
-  let setNewSkill;
+  // useEffect(() => {
+  //   setSkillId(id);
+  //   if (skillId) {
+  //     Skills(parseInt(id));
 
-  useEffect(() => {
-    setSkillId(id);
-    if (skillId) {
-      Skills(parseInt(id));
-
-      console.log("function run");
-    } else {
-      console.log("no skills yet");
-    }
-  }, [skillId, id]);
+  //     console.log("function run");
+  //   } else {
+  //     console.log("no skills yet");
+  //   }
+  // }, [skillId, id]);
 
   return (
     <main className={styles["skills-page"]}>
@@ -143,8 +106,8 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
             skills.map(
               ({
                 skill_id,
-                name,
-                level,
+                skillName,
+                skillLevel,
                 last_used,
                 usedDaily,
                 comment,
@@ -153,8 +116,8 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
                   <Card
                     key={`skill ${skill_id}`}
                     usedDaily={usedDaily ? usedDaily : false}
-                    skillName={name}
-                    skillLevel={level}
+                    skillName={skillName}
+                    skillLevel={skillLevel}
                     lastUsed={last_used}
                     comment={comment}
                   />

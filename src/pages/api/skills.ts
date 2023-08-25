@@ -9,14 +9,14 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
   const dataFromFile = (filePath: string) => {
     const fileData = fs.readFileSync(filePath);
-    const data =  JSON.parse(fileData.toString());
+    const data = JSON.parse(fileData.toString());
     return data;
   };
 
   if (req.method === "POST") {
     const category = req.body.category;
-    const skill = req.body.skill;
-    const skillLevel = req.body.skillLevel;
+    const skillName = req.body.skillName;
+    const level = req.body.skillLevel;
     const month = req.body.month;
     const year = req.body.year;
     const usedDaily = req.body.usedDaily;
@@ -26,8 +26,8 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     const newFormDataSent = {
       skill_id: new Date().toISOString(), //should return id for existing ones or null for new ones
       category: category,
-      skill: skill,
-      skillLevel: skillLevel,
+      skillName: skillName,
+      skillLevel: level,
       month: month,
       year: year,
       usedDaily: usedDaily,
@@ -45,7 +45,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
   } else {
     const filePath = fileFromPath();
     const data = dataFromFile(filePath);
-    res.status(200).json({ newSkills: data });
+    res.status(200).json({ skills: data });
   }
 }
 

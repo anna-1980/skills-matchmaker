@@ -1,6 +1,5 @@
 "use client";
-import React, { useState } from "react";
-import Checkbox from "../../checkbox/Checkbox";
+import React from "react";
 import LastUsed from "../../last-used/LastUsed";
 import Select from "../../select/Select";
 import Textarea from "../../textarea/Textarea";
@@ -17,8 +16,8 @@ const skillLevel = [
 
 interface CardBodyProps {
   edit: boolean;
-  lastUsed: string;
-  usedDaily: boolean;
+  lastUsed: string | undefined;
+  usedDaily: boolean | undefined;
   comment: string;
   className?: string;
 }

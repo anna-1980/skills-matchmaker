@@ -7,6 +7,7 @@
 
   &__buttons {
     display: flex;
+    
   }
 
   &__buttons--cancel,
@@ -25,7 +26,7 @@
   .card-footer {
     align-items: center;
     justify-content: flex-end;
-
+    
     &__buttons--delete {
       display: none;
     }

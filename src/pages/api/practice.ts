@@ -5,7 +5,7 @@ import path from "path";
 
 function handler(req: NextApiRequest, res: NextApiResponse) {
   const fileFromPath = () => {
-    return path.join(process.cwd(), "data", "skills.json");
+    return path.join(process.cwd(), "data", "practice.json");
   };
 
   const dataFromFile = (filePath: string) => {
