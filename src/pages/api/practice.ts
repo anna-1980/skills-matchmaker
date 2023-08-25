@@ -1,3 +1,4 @@
+// write a get method for the practice page
 import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
@@ -7,7 +8,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     return path.join(process.cwd(), "data", "skills.json");
   };
 
-  const dataFeomFile = (filePath: string) => {
+  const dataFromFile = (filePath: string) => {
     const fileData = fs.readFileSync(filePath);
     const data = JSON.parse(fileData.toString());
     return data;
@@ -36,7 +37,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
     // store in a file
     const filePath = fileFromPath();
-    const data = dataFeomFile(filePath);
+    const data = dataFromFile(filePath);
     data.push(newFormDataSent);
     fs.writeFileSync(filePath, JSON.stringify(data));
     res
@@ -44,7 +45,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
       .json({ message: "successfully sent", newFormData: newFormDataSent });
   } else {
     const filePath = fileFromPath();
-    const data = dataFeomFile(filePath);
+    const data = dataFromFile(filePath);
     res.status(200).json({ newSkills: data });
   }
 }

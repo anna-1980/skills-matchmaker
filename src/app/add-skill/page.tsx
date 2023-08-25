@@ -55,7 +55,7 @@ export default function AddSkill() {
     usedDaily: false,
     comment: "",
   });
- 
+
   const Category = async () => {
     try {
       const res = await fetch(`categories.json`);
@@ -68,7 +68,7 @@ export default function AddSkill() {
       console.log(err);
     }
   };
- 
+
   const Skills = async (catId: number) => {
     console.log(" catID Skills fetch ", catId, 1);
 
@@ -139,7 +139,7 @@ export default function AddSkill() {
     event.preventDefault();
 
     const requestBody = { ...formData };
-    fetch("/api/add-skill", {
+    fetch("/api/skills", {
       method: "POST",
       body: JSON.stringify(requestBody),
       headers: {
@@ -149,6 +149,7 @@ export default function AddSkill() {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
+    router.push("categories/1");
   };
 
   console.log(">>>from the state catID", catId);

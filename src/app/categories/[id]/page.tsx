@@ -47,7 +47,7 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
   const Skills = async (id: number) => {
     try {
       const res = await fetch(`../../skills.json`);
-      console.log(res, "from Skills fetch");
+      // console.log(res, "from Skills fetch");
       const data = await res.json();
       const skills = data.filter((skill: any) => skill.category_id === id)[0]
         .skills;
