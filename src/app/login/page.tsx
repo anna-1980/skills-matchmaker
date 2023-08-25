@@ -33,7 +33,7 @@ export default function Home() {
         <p className={styles["login-page__bottom-text"]}>
           Proudly presented by
           <br />
-          <strong>IC Frontend Development</strong>
+          <strong>Training Frontend Development</strong>
         </p>
       </div>
     </main>

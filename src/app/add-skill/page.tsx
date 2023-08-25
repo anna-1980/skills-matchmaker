@@ -55,18 +55,7 @@ export default function AddSkill() {
     usedDaily: false,
     comment: "",
   });
-
-  // const Category = async () => {
-  //   try {
-  //     const res = await fetch(`http://37.114.34.4:5000/api/categories`);
-  //     const data = await res.json();
-  //     setCategoryOption(categoryOption.concat(data.categories));
-  //     setIsLoadingCategories(false);
-  //   } catch (err) {
-  //     setIsLoadingCategories(false);
-  //     console.log(err);
-  //   }
-  // };
+ 
   const Category = async () => {
     try {
       const res = await fetch(`categories.json`);
@@ -79,21 +68,7 @@ export default function AddSkill() {
       console.log(err);
     }
   };
-
-  // const Skills = async (catId: number) => {
-  //   try {
-  //     const res = await fetch(
-  //       `http://37.114.34.4:5000/api/skills/categories/${catId}`
-  //     );
-  //     const { skills } = await res.json();
-  //     setSkillsOption(skills);
-  //     if (skills && skills.length >= 1) {
-  //       setIsLoading(false);
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
+ 
   const Skills = async (catId: number) => {
     console.log(" catID Skills fetch ", catId, 1);
 
@@ -104,7 +79,6 @@ export default function AddSkill() {
       const skills = data.filter(
         (skill: any) => skill.category_id === (catId as number)
       )[0].skills;
-      // console.log(skills, skills[0].skills[0]);
       setSkillsOption(skills);
       if (skills && skills.length >= 1) {
         setIsLoading(false);
@@ -165,7 +139,7 @@ export default function AddSkill() {
     event.preventDefault();
 
     const requestBody = { ...formData };
-    fetch("/api/practice", {
+    fetch("/api/add-skill", {
       method: "POST",
       body: JSON.stringify(requestBody),
       headers: {

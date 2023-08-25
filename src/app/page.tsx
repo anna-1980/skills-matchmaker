@@ -8,16 +8,22 @@ import GetUser from "./components/get-user/GetUser";
 import LogOutButton from "./login/LogOutButton";
 import NoSkillInfo from "./components/no-skill-info/NoSkillInfo";
 
-const user = {
-  firstName: "Markus",
-};
-async function getCategories() {
-  let res = await fetch("http://37.114.34.4:5000/api/users/2/categories");
-  return res.json();
-}
+// async function getCategories() {
+//   let res = await fetch("api/categories.json");
+//   return res.json();
+// }
+
+// const fetchData = async (host: string) => {
+//   const res = await fetch(`http://${host}/api/categories`);
+//   return res.json();
+// };
 
 export default async function Home({}) {
-  // let { categories = [] } = await getCategories();
+  // const host = headers().get("host");
+  // const data = await fetchData(host!);
+
+  // let { categoriess = [] } = await getCategories();
+  // let { categories = [] } = data;
   // and array with objects of categories
   let categories = [
     {
