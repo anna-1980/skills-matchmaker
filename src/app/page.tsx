@@ -8,46 +8,22 @@ import GetUser from "./components/get-user/GetUser";
 import LogOutButton from "./login/LogOutButton";
 import NoSkillInfo from "./components/no-skill-info/NoSkillInfo";
 
-// async function getCategories() {
-//   let res = await fetch("api/categories.json");
-//   return res.json();
-// }
-
-// const fetchData = async (host: string) => {
-//   const res = await fetch(`http://${host}/api/categories`);
-//   return res.json();
-// };
-
 export default async function Home({}) {
-  // const host = headers().get("host");
-  // const data = await fetchData(host!);
+  async function getCategories() {
+    try {
+      let res = await fetch("http://localhost:3000/api/categories");
+      const data = await res.json();
+      console.log("data", data);
+      const categories = data.categories;
+      console.log("categories from fetch", categories);
+      return categories;
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
-  // let { categoriess = [] } = await getCategories();
-  // let { categories = [] } = data;
-  // and array with objects of categories
-  let categories = [
-    {
-      id: 1,
-      name: "Frontend",
-    },
-    {
-      id: 2,
-      name: "Backend",
-    },
-    {
-      id: 3,
-      name: "DevOps",
-    },
-    {
-      id: 4,
-      name: "Design",
-    },
-    {
-      id: 5,
-      name: "Project Management",
-    },
-  ];
-
+  const { categories = {} } = await getCategories();
+  
   return (
     <main>
       <h1 className={styles["logout-greeting"]}>

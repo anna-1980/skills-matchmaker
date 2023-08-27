@@ -11,76 +11,40 @@ interface pageParams {
 }
 
 export interface SkillProps {
-  skill_id: number;
-  skillName: string;
-  skillLevel: number;
-  usedDaily: boolean;
-  comment: string;
-  year: string;
-  month: string;
-}
-export interface NewSkillProps {
   skill_id: string;
   category: string;
-  skill: string;
-  skillLevel: string;
+  category_id: number;
+  skillName: string;
+  skillLevel: number;
   month: string;
   year: string;
   usedDaily?: boolean;
   comment: string;
 }
 
-// async function getSkills(id: string) {
-//   let res = await fetch(`skills.json`);
-//   const data = await res.json();
-//   console.log("data", data);
-//   const skills = data.filter((skill: any) => skill.category_id === id)[0];
-//   return skills;
-// }
 
 const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
   async function getSkills(id: string) {
-    let res = await fetch("http://localhost:3000/api/skills");
-    return res.json();
+    console.log("id", id);
+    try {
+      let res = await fetch("http://localhost:3000/api/skills");
+      const data = await res.json();
+      console.log("data", data);
+      const skills = data.skills.filter(
+        (skill: SkillProps) => skill.category_id === Number(id)
+      );
+      console.log("skills from fetch", skills);
+      return skills;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  const { skills = {} } = use(getSkills(id));
-  console.log("newSkills", skills);
-  // let { skills = {} } = use(getSkills(id));
-  // and array with objects of skills
+  const skills = use(getSkills(id));
 
-  // const [skillId, setSkillId] = React.useState<string>(id);
-  // const [skills, setSkills] = React.useState<SkillProps[]>([]);
-  // const [isLoading, setIsLoading] = React.useState(true);
-
-  // const Skills = async (id: number) => {
-  //   try {
-  //     const res = await fetch(`../../skills.json`);
-  //     // console.log(res, "from Skills fetch");
-  //     const data = await res.json();
-  //     const skills = data.filter((skill: any) => skill.category_id === id)[0]
-  //       .skills;
-  //     console.log("skills", skills);
-  //     setSkills(skills);
-  //     if (skills && skills.length >= 1) {
-  //       setIsLoading(false);
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   setSkillId(id);
-  //   if (skillId) {
-  //     Skills(parseInt(id));
-
-  //     console.log("function run");
-  //   } else {
-  //     console.log("no skills yet");
-  //   }
-  // }, [skillId, id]);
-
+  console.log("Skills destructured", skills);
+  const dataBack = use(getSkills(id));
+  
   return (
     <main className={styles["skills-page"]}>
       <div className={styles.skills}>

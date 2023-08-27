@@ -4,6 +4,14 @@
     {
       "id": 2,
       "name": "backend"
+    },
+    {
+      "id": 3,
+      "name": "DevOps"
+    },
+    {
+      "id": 4,
+      "name": "Design"
     }
   ]
 }

@@ -38,7 +38,7 @@ const CategoriesList = ({
                   }}
                   priority="secondary"
                   expanded
-                  className={styles["categories-list__button"]}
+                  className={styles["categories-list__item-button"]}
                   iconR={
                     <IconsLibrary symbol="arr-right" size="24px" fill="white" />
                   }

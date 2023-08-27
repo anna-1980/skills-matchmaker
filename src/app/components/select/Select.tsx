@@ -31,18 +31,7 @@ const Select: FC<SelectProps> = ({
   className,
   disabled,
 }) => {
-  // console.log(options.map((option) => (
-            
-  //           <option
-  //             key={option.id ?? Math.random()}
-  //             value={option ? option.id : 0}
-  //           >
-  //             {options ? option.name : "Loading..."}
-  //           </option>
-
-  //         ))) 
   return (
-    
     <div
       className={cn(
         styles.select,
@@ -60,14 +49,12 @@ const Select: FC<SelectProps> = ({
           disabled={disabled}
         >
           {options.map((option) => (
-            
             <option
               key={option.id ?? Math.random()}
               value={option ? option.id : 0}
             >
               {options ? option.name : "Loading..."}
             </option>
-
           ))}
         </select>
         <span className={styles.select__icon}>

@@ -1,0 +1,66 @@
+[
+  {
+    "category_id": 1,
+    "id": 1,
+    "skills": [
+      {
+        "skill_id": 1,
+        "name": "HTML"
+      },
+      {
+        "skill_id": 2,
+        "name": "CSS"
+      }
+    ]
+  },
+  {
+    "category_id": 2,
+    "id": 2,
+    "skills": [
+      {
+        "skill_id": 1,
+        "name": "C#"
+      },
+      {
+        "skill_id": 2,
+        "name": "Java"
+      }
+    ]
+  },
+  {
+    "category_id": 3,
+    "id": 3,
+    "skills": [
+      {
+        "skill_id": 1,
+        "name": "Version control"
+      },
+      {
+        "skill_id": 2,
+        "name": "Deployment automation"
+      }
+    ]
+  },
+  {
+    "category_id": 4,
+    "id": 4,
+    "skills": [
+      {
+        "skill_id": 1,
+        "name": "Figma"
+      },
+      {
+        "skill_id": 2,
+        "name": "Adobe Illustrator"
+      },
+      {
+        "skill_id": 3,
+        "name": "Adobe Photoshop"
+      },
+      {
+        "skill_id": 4,
+        "name": "UI/UX"
+      }
+    ]
+  }
+]
