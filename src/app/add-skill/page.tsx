@@ -78,7 +78,6 @@ export default function AddSkill() {
     try {
       const res = await fetch(`skills-categories.json`);
       const data = await res.json();
-      // console.log(data, "from the state catID", catId);
       const skills = data.filter(
         (skill: any) => skill.category_id === (catId as number)
       )[0].skills;
@@ -162,14 +161,9 @@ export default function AddSkill() {
       .then((response) => response.json())
       .then((data) => console.log(data))
       .catch((err) => console.log(err));
-    // router.push(`categories/${catId}`);
-    // router.push(`/categories/${catId.toString()}`);
     router.push(`/categories/${catId.toString()}` + "?" + params.toString());
-    // console.log("formData", formData);
-    console.log("formData", formData.category, `categories/${catId}`);
   };
 
-  console.log(">>>from the state catID", catId);
   return (
     <main>
       <div>

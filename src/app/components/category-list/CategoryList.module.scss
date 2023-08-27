@@ -30,7 +30,7 @@
       flex-basis: calc(25% - toRem(15px));
       margin-top: 0;
 
-      .categories-list__button {
+      &-button {
         height: toRem(98px);
         justify-content: center;
       }
@@ -51,5 +51,6 @@
 
   .add-skill-btn--bottom {
     display: flex;
+    height: toRem(98px);
   }
 }
