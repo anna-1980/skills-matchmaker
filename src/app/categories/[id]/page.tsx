@@ -11,19 +11,10 @@ interface pageParams {
 }
 
 export interface SkillProps {
-  skill_id: number;
-  skillName: string;
-  skillLevel: number;
-  usedDaily: boolean;
-  comment: string;
-  year: string;
-  month: string;
-}
-export interface NewSkillProps {
   skill_id: string;
   category: string;
-  skill: string;
-  skillLevel: string;
+  skillName: string;
+  skillLevel: number;
   month: string;
   year: string;
   usedDaily?: boolean;
@@ -40,15 +31,22 @@ export interface NewSkillProps {
 
 const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
   async function getSkills(id: string) {
-    let res = await fetch("http://localhost:3000/api/skills");
-    return res.json();
+    try {
+      let res = await fetch("http://localhost:3000/api/skills");
+      const data = await res.json();
+      console.log("data", data);
+      const skills = data.skills.filter((skill: any) => skill.category === id);
+      console.log("skills from fetch", skills);
+      return skills;
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  const { skills = {} } = use(getSkills(id));
-  console.log("newSkills", skills);
-  // let { skills = {} } = use(getSkills(id));
-  // and array with objects of skills
-
+  const skills = use(getSkills(id));
+  console.log("Skills destructured", skills);
+  const dataBack = use(getSkills(id));
+  // console.log("dataBack", dataBack);
   // const [skillId, setSkillId] = React.useState<string>(id);
   // const [skills, setSkills] = React.useState<SkillProps[]>([]);
   // const [isLoading, setIsLoading] = React.useState(true);
@@ -71,15 +69,11 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
   // };
 
   // useEffect(() => {
-  //   setSkillId(id);
-  //   if (skillId) {
-  //     Skills(parseInt(id));
 
-  //     console.log("function run");
-  //   } else {
-  //     console.log("no skills yet");
-  //   }
-  // }, [skillId, id]);
+  // }, []);
+  // filter skills for categories
+  const filterSkills = skills.filter((skill: any) => skill.category === id);
+  console.log("FIltered skills", filterSkills);
 
   return (
     <main className={styles["skills-page"]}>
