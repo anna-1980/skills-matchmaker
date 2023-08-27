@@ -88,5 +88,15 @@
     "year": "2023",
     "usedDaily": true,
     "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T15:12:11.361Z",
+    "category": "backend",
+    "skillName": "Java",
+    "skillLevel": 3,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": ""
   }
 ]

@@ -23,6 +23,7 @@ interface SkillList {
 
 interface EventData {
   category: string;
+  category_id: number;
   skillName: string;
   skillLevel: number;
   month: string;
@@ -46,6 +47,7 @@ export default function AddSkill() {
   const [isLoadingCategories, setIsLoadingCategories] = useState(true);
   const [formData, setFormData] = useState<EventData>({
     category: "",
+    category_id: 0,
     skillName: "",
     skillLevel: 1,
     month: new Intl.DateTimeFormat("en", {
@@ -71,12 +73,12 @@ export default function AddSkill() {
   };
 
   const Skills = async (catId: number) => {
-    console.log(" catID Skills fetch ", catId, 1);
+    console.log(" catID Skills fetch ", catId);
 
     try {
       const res = await fetch(`skills.json`);
       const data = await res.json();
-      console.log(data, "from the state catID", catId);
+      // console.log(data, "from the state catID", catId);
       const skills = data.filter(
         (skill: any) => skill.category_id === (catId as number)
       )[0].skills;
@@ -94,21 +96,33 @@ export default function AddSkill() {
       Category();
     } else {
       Skills(catId);
+      setFormData((prevState) => {
+        return {
+          ...prevState,
+          category_id: catId,
+        };
+      });
     }
   }, [isLoading, catId]);
 
   const handleSelectChange = (event: any) => {
-    const optionId = event.target.value;
+    let optionId = event.target.value;
     console.log("optionId", optionId);
-    setCatId(parseInt(optionId));
+    event.target.name === "category" && setCatId(parseInt(optionId));
+    // const something = event.target.name === "category" ? 0 : parseInt(optionId);
+    // console.log("something", something);
     const value =
       event.target.name === "skillLevel"
         ? Number(event.target.value)
-        : event.target.options[event.target.selectedIndex].text;
+        : // : event.target.name === "category"
+          // ? event.target.value
+          event.target.options[event.target.selectedIndex].text;
+    console.log("value", value);
     setFormData((prevState) => {
       return {
         ...prevState,
         [event.target.name]: value,
+        // category_id: catId,
       };
     });
   };
@@ -139,19 +153,22 @@ export default function AddSkill() {
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
 
+    
     const requestBody = { ...formData };
     console.log("requestBody", requestBody);
-    fetch("/api/skills", {
-      method: "POST",
-      body: JSON.stringify(requestBody),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-    router.push("categories/1");
+    // fetch("/api/skills", {
+    //   method: "POST",
+    //   body: JSON.stringify(requestBody),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data))
+    //   .catch((err) => console.log(err));
+    // router.push(`categories/${catId}}`);
+    console.log("formData", formData);
+    // console.log("formData", formData.category, `ctegories/${catId} `);
   };
 
   console.log(">>>from the state catID", catId);
