@@ -39,7 +39,7 @@ export default function AddSkill() {
 
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const searchParams = useSearchParams()!;
 
   const [catId, setCatId] = useState<number>(0);
   const [skillsOptions, setSkillsOption] = useState<SkillList[]>([]);
@@ -61,10 +61,10 @@ export default function AddSkill() {
 
   const Category = async () => {
     try {
-      const res = await fetch(`categories.json`);
+      const res = await fetch(`http://localhost:3000/api/categories`);
       const data = await res.json();
-      console.log(data);
-      setCategoryOption(categoryOption.concat(data.categories));
+      console.log(data.categories.categories);
+      setCategoryOption(categoryOption.concat(data.categories.categories));
       setIsLoadingCategories(false);
     } catch (err) {
       setIsLoadingCategories(false);
@@ -76,7 +76,7 @@ export default function AddSkill() {
     console.log(" catID Skills fetch ", catId);
 
     try {
-      const res = await fetch(`skills.json`);
+      const res = await fetch(`skills-categories.json`);
       const data = await res.json();
       // console.log(data, "from the state catID", catId);
       const skills = data.filter(
@@ -109,20 +109,15 @@ export default function AddSkill() {
     let optionId = event.target.value;
     console.log("optionId", optionId);
     event.target.name === "category" && setCatId(parseInt(optionId));
-    // const something = event.target.name === "category" ? 0 : parseInt(optionId);
-    // console.log("something", something);
     const value =
       event.target.name === "skillLevel"
         ? Number(event.target.value)
-        : // : event.target.name === "category"
-          // ? event.target.value
-          event.target.options[event.target.selectedIndex].text;
+        : event.target.options[event.target.selectedIndex].text;
     console.log("value", value);
     setFormData((prevState) => {
       return {
         ...prevState,
         [event.target.name]: value,
-        // category_id: catId,
       };
     });
   };
@@ -152,23 +147,26 @@ export default function AddSkill() {
 
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    const params = new URLSearchParams(searchParams);
+    params.set("category", formData.category);
 
-    
     const requestBody = { ...formData };
     console.log("requestBody", requestBody);
-    // fetch("/api/skills", {
-    //   method: "POST",
-    //   body: JSON.stringify(requestBody),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => console.log(data))
-    //   .catch((err) => console.log(err));
-    // router.push(`categories/${catId}}`);
-    console.log("formData", formData);
-    // console.log("formData", formData.category, `ctegories/${catId} `);
+    fetch("/api/skills", {
+      method: "POST",
+      body: JSON.stringify(requestBody),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+    // router.push(`categories/${catId}`);
+    // router.push(`/categories/${catId.toString()}`);
+    router.push(`/categories/${catId.toString()}` + "?" + params.toString());
+    // console.log("formData", formData);
+    console.log("formData", formData.category, `categories/${catId}`);
   };
 
   console.log(">>>from the state catID", catId);

@@ -15,6 +15,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
 
   if (req.method === "POST") {
     const category = req.body.category;
+    const category_id = req.body.category_id;
     const skillName = req.body.skillName;
     const level = req.body.skillLevel;
     const month = req.body.month;
@@ -26,6 +27,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     const newFormDataSent = {
       skill_id: new Date().toISOString(), //should return id for existing ones or null for new ones
       category: category,
+      category_id: category_id,
       skillName: skillName,
       skillLevel: level,
       month: month,
