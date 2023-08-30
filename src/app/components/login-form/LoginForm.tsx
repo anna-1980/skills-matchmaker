@@ -18,8 +18,6 @@ function LoginFrom() {
       redirect: true,
       callbackUrl: "/",
     });
-
-    console.log(res);
   };
 
   return (

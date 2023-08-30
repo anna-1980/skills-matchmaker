@@ -13,9 +13,7 @@ export default async function Home({}) {
     try {
       let res = await fetch("http://localhost:3000/api/categories");
       const data = await res.json();
-      console.log("data", data);
       const categories = data.categories;
-      console.log("categories from fetch", categories);
       return categories;
     } catch (err) {
       console.log(err);

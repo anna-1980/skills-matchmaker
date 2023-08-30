@@ -63,7 +63,6 @@ export default function AddSkill() {
     try {
       const res = await fetch(`http://localhost:3000/api/categories`);
       const data = await res.json();
-      console.log(data.categories.categories);
       setCategoryOption(categoryOption.concat(data.categories.categories));
       setIsLoadingCategories(false);
     } catch (err) {
@@ -73,8 +72,6 @@ export default function AddSkill() {
   };
 
   const Skills = async (catId: number) => {
-    console.log(" catID Skills fetch ", catId);
-
     try {
       const res = await fetch(`skills-categories.json`);
       const data = await res.json();
@@ -102,17 +99,15 @@ export default function AddSkill() {
         };
       });
     }
-  }, [isLoading, catId]);
+  }, [isLoading, formData.category]);
 
   const handleSelectChange = (event: any) => {
     let optionId = event.target.value;
-    console.log("optionId", optionId);
     event.target.name === "category" && setCatId(parseInt(optionId));
     const value =
       event.target.name === "skillLevel"
         ? Number(event.target.value)
         : event.target.options[event.target.selectedIndex].text;
-    console.log("value", value);
     setFormData((prevState) => {
       return {
         ...prevState,
@@ -150,7 +145,6 @@ export default function AddSkill() {
     params.set("category", formData.category);
 
     const requestBody = { ...formData };
-    console.log("requestBody", requestBody);
     fetch("/api/skills", {
       method: "POST",
       body: JSON.stringify(requestBody),

@@ -1,1 +1,201 @@
-[{"skill_id":"2023-08-25T18:55:39.546Z","category":"frontend","skillName":"HTML","skillLevel":3,"month":"August","year":"2023","usedDaily":false,"comment":"Add some comment about the skill"},{"skill_id":"2023-08-25T19:50:02.845Z","category":"frontend","skillName":"CSS","skillLevel":3,"month":"July","year":"2015","usedDaily":false,"comment":"I use it from time to time"},{"skill_id":"2023-08-25T20:33:22.987Z","category":"2","skillName":"C#","skillLevel":0,"month":"10","year":"19","usedDaily":true,"comment":"Very long time ago I used this skill"},{"skill_id":"2023-08-25T20:41:58.446Z","category":"1","skillName":"First","skillLevel":2,"month":"8","year":"14","usedDaily":false,"comment":"One Learned in a course, did not use it since"},{"skill_id":"2023-08-25T20:43:46.877Z","category":"2","skillName":"Second","skillLevel":1,"month":"August","year":"2023","usedDaily":false,"comment":"Two, Used few months ago"},{"skill_id":"2023-08-25T20:44:41.787Z","category":"1","skillName":"CSS","skillLevel":2,"month":"August","year":"2023","usedDaily":false,"comment":""},{"skill_id":"2023-08-25T20:46:10.106Z","category":"2","skillName":"Java","skillLevel":4,"month":"August","year":"2023","usedDaily":false,"comment":""},{"skill_id":"2023-08-25T20:47:24.649Z","category":"backend","skillName":"C#","skillLevel":4,"month":"December","year":"2014","usedDaily":false,"comment":""},{"skill_id":"2023-08-27T10:05:38.861Z","category":"frontend","skillName":"CSS","skillLevel":1,"month":"August","year":"2023","usedDaily":true,"comment":""},{"skill_id":"2023-08-27T15:12:11.361Z","category":"backend","skillName":"Java","skillLevel":3,"month":"August","year":"2023","usedDaily":true,"comment":""},{"skill_id":"2023-08-27T17:36:10.687Z","category":"frontend","category_id":1,"skillName":"HTML","skillLevel":2,"month":"April","year":"2023","usedDaily":true,"comment":""},{"skill_id":"2023-08-27T17:42:47.655Z","category":"DevOps","category_id":3,"skillName":"Deployment automation","skillLevel":3,"month":"April","year":"2013","usedDaily":false,"comment":""},{"skill_id":"2023-08-27T20:16:54.442Z","category":"frontend","category_id":1,"skillName":"HTML","skillLevel":5,"month":"August","year":"2023","usedDaily":true,"comment":"comment comment comment"},{"skill_id":"2023-08-27T20:18:43.645Z","category":"backend","category_id":2,"skillName":"Java","skillLevel":1,"month":"July","year":"2013","usedDaily":false,"comment":""},{"skill_id":"2023-08-27T20:19:39.565Z","category":"Design","category_id":4,"skillName":"Adobe Illustrator","skillLevel":4,"month":"August","year":"2023","usedDaily":true,"comment":""},{"skill_id":"2023-08-27T20:34:02.587Z","category":"Design","category_id":4,"skillName":"UI/UX","skillLevel":3,"month":"August","year":"2023","usedDaily":true,"comment":"cookies"}]
+[
+  {
+    "skill_id": "2023-08-25T18:55:39.546Z",
+    "category": "frontend",
+    "skillName": "HTML",
+    "skillLevel": 3,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": false,
+    "comment": "Add some comment about the skill"
+  },
+  {
+    "skill_id": "2023-08-25T19:50:02.845Z",
+    "category": "frontend",
+    "skillName": "CSS",
+    "skillLevel": 3,
+    "month": "July",
+    "year": "2015",
+    "usedDaily": false,
+    "comment": "I use it from time to time"
+  },
+  {
+    "skill_id": "2023-08-25T20:33:22.987Z",
+    "category": "2",
+    "skillName": "C#",
+    "skillLevel": 0,
+    "month": "10",
+    "year": "19",
+    "usedDaily": true,
+    "comment": "Very long time ago I used this skill"
+  },
+  {
+    "skill_id": "2023-08-25T20:41:58.446Z",
+    "category": "1",
+    "skillName": "First",
+    "skillLevel": 2,
+    "month": "8",
+    "year": "14",
+    "usedDaily": false,
+    "comment": "One Learned in a course, did not use it since"
+  },
+  {
+    "skill_id": "2023-08-25T20:43:46.877Z",
+    "category": "2",
+    "skillName": "Second",
+    "skillLevel": 1,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": false,
+    "comment": "Two, Used few months ago"
+  },
+  {
+    "skill_id": "2023-08-25T20:44:41.787Z",
+    "category": "1",
+    "skillName": "CSS",
+    "skillLevel": 2,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": false,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-25T20:46:10.106Z",
+    "category": "2",
+    "skillName": "Java",
+    "skillLevel": 4,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": false,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-25T20:47:24.649Z",
+    "category": "backend",
+    "skillName": "C#",
+    "skillLevel": 4,
+    "month": "December",
+    "year": "2014",
+    "usedDaily": false,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T10:05:38.861Z",
+    "category": "frontend",
+    "skillName": "CSS",
+    "skillLevel": 1,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T15:12:11.361Z",
+    "category": "backend",
+    "skillName": "Java",
+    "skillLevel": 3,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T17:36:10.687Z",
+    "category": "frontend",
+    "category_id": 1,
+    "skillName": "HTML",
+    "skillLevel": 2,
+    "month": "April",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T17:42:47.655Z",
+    "category": "DevOps",
+    "category_id": 3,
+    "skillName": "Deployment automation",
+    "skillLevel": 3,
+    "month": "April",
+    "year": "2013",
+    "usedDaily": false,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T20:16:54.442Z",
+    "category": "frontend",
+    "category_id": 1,
+    "skillName": "HTML",
+    "skillLevel": 5,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": "comment comment comment"
+  },
+  {
+    "skill_id": "2023-08-27T20:18:43.645Z",
+    "category": "backend",
+    "category_id": 2,
+    "skillName": "Java",
+    "skillLevel": 1,
+    "month": "July",
+    "year": "2013",
+    "usedDaily": false,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T20:19:39.565Z",
+    "category": "Design",
+    "category_id": 4,
+    "skillName": "Adobe Illustrator",
+    "skillLevel": 4,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-27T20:34:02.587Z",
+    "category": "Design",
+    "category_id": 4,
+    "skillName": "UI/UX",
+    "skillLevel": 3,
+    "month": "August",
+    "year": "2023",
+    "usedDaily": true,
+    "comment": "cookies"
+  },
+  {
+    "skill_id": "2023-08-30T18:38:39.688Z",
+    "category": "backend",
+    "category_id": 2,
+    "skillName": "C#",
+    "skillLevel": 4,
+    "month": "August",
+    "year": "2020",
+    "usedDaily": false,
+    "comment": "provide a comment"
+  },
+  {
+    "skill_id": "2023-08-30T18:49:24.454Z",
+    "category": "Design",
+    "category_id": 4,
+    "skillName": "Adobe Illustrator",
+    "skillLevel": 3,
+    "month": "November",
+    "year": "2022",
+    "usedDaily": false,
+    "comment": ""
+  },
+  {
+    "skill_id": "2023-08-30T18:49:39.066Z",
+    "category": "backend",
+    "category_id": 2,
+    "skillName": "Java",
+    "skillLevel": 1,
+    "month": "September",
+    "year": "2019",
+    "usedDaily": false,
+    "comment": ""
+  }
+]

@@ -22,18 +22,14 @@ export interface SkillProps {
   comment: string;
 }
 
-
 const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
   async function getSkills(id: string) {
-    console.log("id", id);
     try {
       let res = await fetch("http://localhost:3000/api/skills");
       const data = await res.json();
-      console.log("data", data);
       const skills = data.skills.filter(
         (skill: SkillProps) => skill.category_id === Number(id)
       );
-      console.log("skills from fetch", skills);
       return skills;
     } catch (err) {
       console.log(err);
@@ -42,9 +38,8 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
 
   const skills = use(getSkills(id));
 
-  console.log("Skills destructured", skills);
   const dataBack = use(getSkills(id));
-  
+
   return (
     <main className={styles["skills-page"]}>
       <div className={styles.skills}>

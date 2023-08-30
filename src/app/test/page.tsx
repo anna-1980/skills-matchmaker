@@ -16,7 +16,6 @@ export default function Test() {
   const { user = {} } = data || {};
   const [userData, setUserData] = useState<Object>({ data });
 
-  console.log(status);
   const userMock = {
     name: "Test",
     email: "test@test.test",
