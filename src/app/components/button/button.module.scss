@@ -133,12 +133,11 @@
 
   &__label {
     line-height: 1;
+    svg {
+      position: relative;
+    }
   }
 
-  svg {
-    position: relative;
-    top: toRem(2px);
-  }
 }
 
 .icon-left-side {

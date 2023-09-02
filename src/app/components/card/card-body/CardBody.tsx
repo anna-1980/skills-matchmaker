@@ -11,7 +11,7 @@ const skillLevel = [
   { id: 2, name: "Basic" },
   { id: 3, name: "Intermediate" },
   { id: 4, name: "Advanced" },
-  { id: 5, name: "Ninja" },
+  { id: 5, name: "Expert" },
 ];
 
 interface CardBodyProps {
