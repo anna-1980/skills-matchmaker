@@ -55,26 +55,31 @@ const Button: FC<ButtonProps> = ({
     },
     className
   );
+  // write conditional classes for icons
+  const iconClasses = cn(
+    iconL ? styles["icon-left-side"] : "",
+    iconR ? styles["icon-right-side"] : ""
+  );
 
-  const clonedIconL =
-    iconL &&
-    React.cloneElement(iconL, {
-      className: styles["icon-left-side"],
-    });
+  // const clonedIconL =
+  //   iconL &&
+  //   React.cloneElement(iconL, {
+  //     className: styles["icon-left-side"],
+  //   });
 
-  const clonedIconR =
-    iconR &&
-    React.cloneElement(iconR, {
-      className: styles["icon-right-side"],
-    });
+  // const clonedIconR =
+  //   iconR &&
+  //   React.cloneElement(iconR, {
+  //     className: styles["icon-right-side"],
+  //   });
 
   return (
     <>
       {LinkProps ? (
         <Link {...LinkProps} onClick={onClick} className={cn(buttonClass)}>
-          {clonedIconL}
+          {iconL ? <div className={iconClasses}>{iconL}</div> : null}
           <span className={styles.btn__label}>{children}</span>
-          {clonedIconR}
+          {iconR ? <div className={iconClasses}>{iconR}</div> : null}
         </Link>
       ) : (
         <button
@@ -83,9 +88,9 @@ const Button: FC<ButtonProps> = ({
           disabled={disabled}
           type={type}
         >
-          {clonedIconL}
+          {iconL ? <div className={iconClasses}>{iconL}</div> : null}
           <span className={styles.btn__label}>{children}</span>
-          {iconR}
+          {iconR ? <div className={iconClasses}>{iconR}</div> : null}
         </button>
       )}
     </>

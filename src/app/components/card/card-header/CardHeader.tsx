@@ -10,7 +10,7 @@ const skillLevelOption = [
   { value: 2, name: "Basic" },
   { value: 3, name: "Intermediate" },
   { value: 4, name: "Advanced" },
-  { value: 5, name: "Ninja" },
+  { value: 5, name: "Expert" },
 ];
 
 interface CardHeaderProps {

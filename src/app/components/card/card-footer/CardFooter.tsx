@@ -23,17 +23,13 @@ const CardFooter = ({ edit, setEdit, className }: CardFooterProps) => {
             : `${styles["card-footer__buttons--show"]}`
         }
       >
-        <Button
-          priority="tertiary"
-          size="icon"
-          iconR={
-            <IconsLibrary
-              symbol="delete"
-              size="26px"
-              fill="var(--color-primary)"
-            />
-          }
-        />
+        <Button priority="tertiary" size="icon">
+          <IconsLibrary
+            symbol="delete"
+            size="26px"
+            fill="var(--color-primary)"
+          />
+        </Button>
       </div>
       <div className={`${styles["card-footer__buttons"]}`}>
         {edit && (
@@ -41,34 +37,32 @@ const CardFooter = ({ edit, setEdit, className }: CardFooterProps) => {
             <Button
               priority="tertiary"
               size="icon"
-              iconR={
-                <IconsLibrary
-                  symbol="cancel"
-                  size="26px"
-                  fill="var(--color-primary)"
-                />
-              }
               onClick={() => {
                 handleEdit();
               }}
-            />
+            >
+              <IconsLibrary
+                symbol="cancel"
+                size="26px"
+                fill="var(--color-primary)"
+              />
+            </Button>
           </div>
         )}
         <div className={`${styles["card-footer__buttons--check"]}`}>
           <Button
             priority="accent"
             size="icon"
-            iconR={
-              <IconsLibrary
-                symbol={edit ? "tickmark" : "edit"}
-                size="26px"
-                fill="var(--color-primary)"
-              />
-            }
             onClick={() => {
               handleEdit();
             }}
-          />
+          >
+            <IconsLibrary
+              symbol={edit ? "tickmark" : "edit"}
+              size="26px"
+              fill="var(--color-primary)"
+            />
+          </Button>
         </div>
       </div>
     </div>

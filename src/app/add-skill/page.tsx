@@ -9,8 +9,8 @@ import LastUsed from "../components/last-used/LastUsed";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 const dropdownOptions = [
-  { id: 1, name: "Beginner" },
-  { id: 2, name: "pre-Intermediate" },
+  { id: 1, name: "Very Basic" },
+  { id: 2, name: "Basic" },
   { id: 3, name: "Intermediate" },
   { id: 4, name: "Advanced" },
   { id: 5, name: "Expert" },
