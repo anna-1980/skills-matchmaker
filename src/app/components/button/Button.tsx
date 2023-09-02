@@ -55,23 +55,11 @@ const Button: FC<ButtonProps> = ({
     },
     className
   );
-  // write conditional classes for icons
+
   const iconClasses = cn(
     iconL ? styles["icon-left-side"] : "",
     iconR ? styles["icon-right-side"] : ""
   );
-
-  // const clonedIconL =
-  //   iconL &&
-  //   React.cloneElement(iconL, {
-  //     className: styles["icon-left-side"],
-  //   });
-
-  // const clonedIconR =
-  //   iconR &&
-  //   React.cloneElement(iconR, {
-  //     className: styles["icon-right-side"],
-  //   });
 
   return (
     <>
