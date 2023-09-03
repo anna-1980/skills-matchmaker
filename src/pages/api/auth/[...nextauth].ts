@@ -62,7 +62,6 @@ const authOptions: NextAuthOptions = {
         // params.token.role = params.user.role;
       }
       // return final_token
-      console.log("JWT: " + JSON.stringify(params.token));
       return params.token;
     },
   },

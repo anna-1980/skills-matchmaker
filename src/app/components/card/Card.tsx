@@ -11,6 +11,7 @@ interface CardProps {
   lastUsed: string | undefined;
   usedDaily: boolean | undefined;
   comment: string;
+  skill_id: string;
 }
 
 const Card = ({
@@ -19,6 +20,7 @@ const Card = ({
   lastUsed,
   usedDaily,
   comment,
+  skill_id,
 }: CardProps) => {
   const [edit, setEdit] = useState<boolean>(false);
   const [isCardClosed, setToggleCard] = useState<boolean>(true);
@@ -50,6 +52,7 @@ const Card = ({
         edit={edit}
         setEdit={setEdit}
         className={styles.card__footer}
+        skill_id={skill_id}
       />
     </div>
   );
