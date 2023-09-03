@@ -5,7 +5,7 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: "jwt",
   },
-  providers: [ 
+  providers: [
     CredentialsProvider({
       type: "credentials",
       credentials: {
@@ -13,17 +13,27 @@ const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        const user = { id: "1", name: "Anna", email: "anna@test.com" }
+        const user = { id: "1", name: "Anna", email: "anna@test.com" };
 
-      if (user) {
-        // Any object returned will be saved in `user` property of the JWT
-        return user
-      } else {
-        // If you return null then an error will be displayed advising the user to check their details.
-        return null
+        if (user) {
+          if (
+            credentials?.email === user.email &&
+            credentials?.password === "test"
+          ) {
+            // return { id: "1", name: "Anna", email: "anna@test.com" };
+            return user;
+          } else {
+            console.log("Invalid email or password");
+            return null;
+          }
+          // Any object returned will be saved in `user` property of the JWT
+          // return user;
+        } else {
+          // If you return null then an error will be displayed advising the user to check their details.
+          return null;
 
-        // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
-      }
+          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+        }
 
         // const res = await fetch("http://37.114.34.4:5000/api/login", {
         //   method: "POST",
@@ -39,13 +49,12 @@ const authOptions: NextAuthOptions = {
         // } else {
         //   throw new Error("Invalid email or password");
         // }
-        
       },
     }),
   ],
-  // pages: {
-  //   signIn: "/login",
-  // },
+  pages: {
+    signIn: "/login",
+  },
   callbacks: {
     jwt(params) {
       // update token
@@ -53,6 +62,7 @@ const authOptions: NextAuthOptions = {
         // params.token.role = params.user.role;
       }
       // return final_token
+      console.log("JWT: " + JSON.stringify(params.token));
       return params.token;
     },
   },
