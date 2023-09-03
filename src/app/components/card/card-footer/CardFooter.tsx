@@ -24,8 +24,6 @@ const CardFooter = ({
   };
 
   const onDelete = (skill_id: string) => {
-    // event.preventDefault();
-    console.log(skill_id);
     const skillId = skill_id;
     fetch("/api/skills", {
       method: "PATCH",
@@ -35,10 +33,8 @@ const CardFooter = ({
       },
     })
       .then((response) => response.json())
-      .then((data) => console.log(data))
       .catch((err) => console.log(err));
     router.refresh();
-    console.log("router", router.refresh);
   };
 
   return (

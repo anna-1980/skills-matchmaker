@@ -10,6 +10,14 @@
       {
         "skill_id": 2,
         "name": "CSS"
+      },
+      {
+        "skill_id": 3,
+        "name": "JavaScript"
+      },
+      {
+        "skill_id": 3,
+        "name": "TypeScript"
       }
     ]
   },
@@ -24,6 +32,14 @@
       {
         "skill_id": 2,
         "name": "Java"
+      },
+      {
+        "skill_id": 3,
+        "name": "Python"
+      },
+      {
+        "skill_id": 4,
+        "name": "NodeJs"
       }
     ]
   },

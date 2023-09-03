@@ -57,8 +57,7 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
       .status(201)
       .json({ message: "successfully sent", newFormData: newFormDataSent });
   } else if (req.method === "PATCH") {
-    const skillIdToDelete = req.body as string; 
-    console.log("ID of skill to del", req.body);
+    const skillIdToDelete = req.body as string;
     // Load the existing data from the file
     const filePath = fileFromPath();
     const data = dataFromFile(filePath);

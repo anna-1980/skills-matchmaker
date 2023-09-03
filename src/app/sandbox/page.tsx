@@ -17,8 +17,6 @@ const SignIn = (): JSX.Element => {
       redirect: true,
       callbackUrl: "/",
     });
-
-    console.log(res);
   };
   return (
     <div className="sign-in-form">
