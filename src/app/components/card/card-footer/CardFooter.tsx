@@ -1,4 +1,5 @@
 import cn from "classnames";
+import { useRouter } from "next/navigation";
 import Button from "../../button/Button";
 import IconsLibrary from "../../icons/IconsLibrary";
 import styles from "./CardFooter.module.scss";
@@ -8,12 +9,38 @@ interface CardFooterProps {
   setEdit: (value: boolean) => void;
   toggleCard?: boolean;
   className?: string;
+  skill_id: string;
 }
 
-const CardFooter = ({ edit, setEdit, className }: CardFooterProps) => {
+const CardFooter = ({
+  edit,
+  setEdit,
+  className,
+  skill_id,
+}: CardFooterProps) => {
+  const router = useRouter();
   const handleEdit = () => {
     setEdit(!edit);
   };
+
+  const onDelete = (skill_id: string) => {
+    // event.preventDefault();
+    console.log(skill_id);
+    const skillId = skill_id;
+    fetch("/api/skills", {
+      method: "PATCH",
+      body: JSON.stringify(skillId),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+    router.refresh();
+    console.log("router", router.refresh);
+  };
+
   return (
     <div className={cn(styles["card-footer"], className)}>
       <div
@@ -23,7 +50,13 @@ const CardFooter = ({ edit, setEdit, className }: CardFooterProps) => {
             : `${styles["card-footer__buttons--show"]}`
         }
       >
-        <Button priority="tertiary" size="icon">
+        <Button
+          priority="tertiary"
+          size="icon"
+          onClick={() => {
+            onDelete(skill_id);
+          }}
+        >
           <IconsLibrary
             symbol="delete"
             size="26px"

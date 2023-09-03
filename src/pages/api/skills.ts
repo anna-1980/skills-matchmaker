@@ -2,6 +2,18 @@ import { NextApiRequest, NextApiResponse } from "next";
 import fs from "fs";
 import path from "path";
 
+export interface Skill {
+  skill_id: string;
+  category: string;
+  category_id: string;
+  skillName: string;
+  skillLevel: string;
+  month: string;
+  year: string;
+  usedDaily: string;
+  comment: string;
+}
+
 function handler(req: NextApiRequest, res: NextApiResponse) {
   const fileFromPath = () => {
     return path.join(process.cwd(), "data", "skills.json");
@@ -44,6 +56,25 @@ function handler(req: NextApiRequest, res: NextApiResponse) {
     res
       .status(201)
       .json({ message: "successfully sent", newFormData: newFormDataSent });
+  } else if (req.method === "PATCH") {
+    const skillIdToDelete = req.body as string; 
+    console.log("ID of skill to del", req.body);
+    // Load the existing data from the file
+    const filePath = fileFromPath();
+    const data = dataFromFile(filePath);
+    const skillIndexToDelete = data.findIndex(
+      (skill: Skill) => skill.skill_id === skillIdToDelete
+    );
+    if (skillIndexToDelete === -1) {
+      // Skill not found
+      return res.status(404).json({ message: "Skill not found" });
+    }
+    data.splice(skillIndexToDelete, 1);
+
+    // Write the updated data back to the file
+    fs.writeFileSync(filePath, JSON.stringify(data));
+
+    res.status(200).json({ message: "Skill deleted" });
   } else {
     const filePath = fileFromPath();
     const data = dataFromFile(filePath);

@@ -81,6 +81,7 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
                     skillLevel={skillLevel}
                     lastUsed={month + " " + year}
                     comment={comment}
+                    skill_id={skill_id}
                   />
                 );
               }
