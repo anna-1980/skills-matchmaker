@@ -1,9 +1,9 @@
 {
   "categories": [
-    { "id": 1, "name": "frontend" },
+    { "id": 1, "name": "Frontend" },
     {
       "id": 2,
-      "name": "backend"
+      "name": "Backend"
     },
     {
       "id": 3,

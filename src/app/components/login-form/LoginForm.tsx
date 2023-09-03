@@ -28,7 +28,6 @@ function LoginFrom() {
           name="username"
           onChange={({ target }) => {
             setUserInfo({ ...userInfo, email: target.value });
-            console.log(userInfo);
           }}
         >
           <IconsLibrary
