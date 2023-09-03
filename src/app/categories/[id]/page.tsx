@@ -2,6 +2,7 @@
 import Button from "@/app/components/button/Button";
 import Card from "@/app/components/card/Card";
 import IconsLibrary from "@/app/components/icons/IconsLibrary";
+import LogOutButton from "@/app/login/LogOutButton";
 import React, { use, useEffect } from "react";
 import styles from "./page.module.scss";
 
@@ -87,6 +88,10 @@ const Page = ({ params: { id }, searchParams: { category } }: pageParams) => {
               }
             )}
         </div>
+      </div>
+      <hr />
+      <div className={styles["logout-container"]}>
+        <LogOutButton className={styles["logout-button"]} />
       </div>
     </main>
   );

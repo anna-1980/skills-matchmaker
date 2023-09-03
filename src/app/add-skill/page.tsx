@@ -210,7 +210,14 @@ export default function AddSkill() {
             </Button>
           </div>
           <div className={styles["page-content__buttons--cancel"]}>
-            <Button size="medium" priority="tertiary" expanded>
+            <Button
+              onClick={() => {
+                router.push(`/`);
+              }}
+              size="medium"
+              priority="tertiary"
+              expanded
+            >
               Cancel
             </Button>
           </div>

@@ -36,6 +36,17 @@
   }
 }
 
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+
+  .logout-button {
+    @include breakpoint($layout-shift) {
+      min-width: auto;
+    }
+  }
+}
+
 @include breakpoint($layout-shift) {
   .skills {
     &__btn {
