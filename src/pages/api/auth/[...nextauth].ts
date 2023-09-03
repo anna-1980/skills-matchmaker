@@ -14,41 +14,19 @@ const authOptions: NextAuthOptions = {
       },
       async authorize(credentials, req) {
         const user = { id: "1", name: "Anna", email: "anna@test.com" };
-
         if (user) {
           if (
             credentials?.email === user.email &&
             credentials?.password === "test"
           ) {
-            // return { id: "1", name: "Anna", email: "anna@test.com" };
             return user;
           } else {
             console.log("Invalid email or password");
             return null;
           }
-          // Any object returned will be saved in `user` property of the JWT
-          // return user;
         } else {
-          // If you return null then an error will be displayed advising the user to check their details.
           return null;
-
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
-
-        // const res = await fetch("http://37.114.34.4:5000/api/login", {
-        //   method: "POST",
-        //   headers: { "Content-Type": "application/json" },
-        //   body: JSON.stringify(credentials),
-        // });
-
-        // const user = await res.json();
-        // console.log("USER: " + JSON.stringify(user));
-
-        // if (res.ok && user.token) {
-        //   return { ...user, id: parseInt(user.id) };
-        // } else {
-        //   throw new Error("Invalid email or password");
-        // }
       },
     }),
   ],
@@ -57,11 +35,8 @@ const authOptions: NextAuthOptions = {
   },
   callbacks: {
     jwt(params) {
-      // update token
       if (params.user) {
-        // params.token.role = params.user.role;
       }
-      // return final_token
       return params.token;
     },
   },
