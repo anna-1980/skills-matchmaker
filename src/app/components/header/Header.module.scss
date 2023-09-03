@@ -7,7 +7,7 @@ $headerHeight: toRem(90px);
   justify-content: center;
   height: $headerHeight;
   width: 100%;
-  background-color: var(--color-primary);
+  background-color: $color-primary;
 
   &__content {
     position: relative;

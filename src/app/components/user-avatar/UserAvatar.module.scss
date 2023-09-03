@@ -5,11 +5,11 @@
   height: toRem(50px);
   position: relative;
   display: flex;
-  border: toRem(2px) solid var(--color-secondary-dark);
+  border: toRem(2px) solid $color-secondary-dark;
   border-radius: 50%;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-secondary);
+  background-color: $color-secondary;
   color: white;
 
   &__initials {

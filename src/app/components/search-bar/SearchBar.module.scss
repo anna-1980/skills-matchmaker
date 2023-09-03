@@ -13,8 +13,8 @@
     }
 
     input {
-      background-color: var(--color-secondary);
-      border: toRem(1px) solid var(--color-secondary);
+      background-color: $color-secondary;
+      border: toRem(1px) solid $color-secondary;
       color: #fff;
 
       &::placeholder {

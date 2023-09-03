@@ -1,4 +1,4 @@
-@import "../../styles/functions.scss";
+@import "../../styles/index.scss";
 
 .checkbox {
   display: flex;
@@ -12,16 +12,16 @@
     height: toRem(25px);
     border-radius: toRem(6px);
     margin-right: toRem(8px);
-    border: toRem(1px) solid var(--color-secondary-light);
+    border: toRem(1px) solid $color-secondary-light;
     background-color: #fff;
     outline: none;
     cursor: pointer;
-    @include outline-focus(var(--color-secondary-light));
+    @include outline-focus($color-secondary-light);
   }
 
   &--checked {
     input[type="checkbox"] {
-      background-color: var(--color-primary);
+      background-color: $color-primary;
       position: relative;
 
       &::before {

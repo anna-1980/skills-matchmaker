@@ -30,11 +30,7 @@ function LoginFrom() {
             setUserInfo({ ...userInfo, email: target.value });
           }}
         >
-          <IconsLibrary
-            symbol="email"
-            size="16px"
-            fill="var(--color-primary)"
-          />
+          <IconsLibrary symbol="email" size="16px" fill="$color-primary" />
         </Input>
       </div>
 
@@ -47,11 +43,7 @@ function LoginFrom() {
             setUserInfo({ ...userInfo, password: target.value });
           }}
         >
-          <IconsLibrary
-            symbol="password"
-            size="16px"
-            fill="var(--color-primary)"
-          />
+          <IconsLibrary symbol="password" size="16px" fill="$color-primary" />
         </Input>
       </div>
 

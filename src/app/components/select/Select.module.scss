@@ -17,13 +17,13 @@
     font-family: inherit;
     width: 100%;
     border-radius: toRem(5px);
-    border: solid toRem(1px) var(--color-secondary-light);
+    border: solid toRem(1px) $color-secondary-light;
     appearance: none;
     background-color: #fff;
     line-height: 1.25;
 
     &:focus-visible {
-      outline: toRem(2px) dashed var(--color-secondary-light);
+      outline: toRem(2px) dashed $color-secondary-light;
       outline-offset: toRem(-4px);
     }
   }
@@ -50,7 +50,7 @@
   border-top: 2px solid rgba(0, 44, 73, 0.2);
   border-right: 2px solid rgba(0, 44, 73, 0.2);
   border-bottom: 2px solid rgba(0, 44, 73, 0.2);
-  border-left: 2px solid var(--color-primary);
+  border-left: 2px solid $color-primary;
   -webkit-transform: translateZ(0);
   -ms-transform: translateZ(0);
   transform: translateZ(0);

@@ -6,8 +6,8 @@
   overflow: hidden;
   padding: toRem(0px 20px);
   background-color: white;
-  box-shadow: var(--box-shadow);
-  border-radius: var(--button-border-radius);
+  box-shadow: $box-shadow;
+  border-radius: $button-border-radius;
   font-size: toRem(14px);
    
 

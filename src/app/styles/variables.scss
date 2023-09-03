@@ -1,3 +1,22 @@
+$color-primary: #002c49;
+$color-secondary: #506d85;
+$color-secondary-dark: #17233d;
+$color-secondary-light: #7f9db6;
+$color-tertiary: #c5e5e8;
+$color-tertiary-dark: #6bc9d1;
+$color-accent: #fcb118;
+$color-accent-light: #ffdda1;
+$color-background: #f0f0f0;
+
+$box-shadow: toRem(0px 4px 4px) rgba(0, 0, 0, 0.1);
+$box-shadow-hover: toRem(1px 5px 6px) rgba(0, 0, 0, 0.05);
+
+$button-base-height: #{toRem(50px)};
+$button-base-font-size: #{toRem(16px)};
+$button-icon-size: #{toRem(44px)};
+$button-border-radius: #{toRem(5px)};
+ 
+
 $border-radius: 5px;
 $page-indentation-small: 20px;
 $page-indentation-large: 40px;

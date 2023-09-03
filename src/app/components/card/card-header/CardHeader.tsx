@@ -61,7 +61,7 @@ const CardHeader = ({
           <IconsLibrary
             symbol={toggleCard ? "arr-down" : "arr-up"}
             size="26px"
-            fill="var(--color-secondary-dark)"
+            fill="$color-secondary-dark"
           />
         }
       />

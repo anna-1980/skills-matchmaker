@@ -99,7 +99,7 @@ export default function AddSkill() {
         };
       });
     }
-  }, [isLoading, formData.category]);
+  }, [isLoading, formData.category, catId]);
 
   const handleSelectChange = (event: any) => {
     let optionId = event.target.value;
