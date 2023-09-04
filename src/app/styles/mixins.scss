@@ -1,0 +1,17 @@
+@mixin outline-focus($color) {
+  &:focus-visible {
+    outline: toRem(2px) dashed $color;
+    outline-offset: toRem(-4px);
+  }
+}
+
+@mixin content() {
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
