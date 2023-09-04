@@ -53,11 +53,7 @@ const CardFooter = ({
             onDelete(skill_id);
           }}
         >
-          <IconsLibrary
-            symbol="delete"
-            size="26px"
-            fill="var(--color-primary)"
-          />
+          <IconsLibrary symbol="delete" size="26px" fill="$color-primary" />
         </Button>
       </div>
       <div className={`${styles["card-footer__buttons"]}`}>
@@ -70,11 +66,7 @@ const CardFooter = ({
                 handleEdit();
               }}
             >
-              <IconsLibrary
-                symbol="cancel"
-                size="26px"
-                fill="var(--color-primary)"
-              />
+              <IconsLibrary symbol="cancel" size="26px" fill="$color-primary" />
             </Button>
           </div>
         )}
@@ -89,7 +81,7 @@ const CardFooter = ({
             <IconsLibrary
               symbol={edit ? "tickmark" : "edit"}
               size="26px"
-              fill="var(--color-primary)"
+              fill="$color-primary"
             />
           </Button>
         </div>

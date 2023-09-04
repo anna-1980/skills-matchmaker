@@ -1,17 +1,17 @@
 @import "../../styles/index.scss";
 
 .btn {
-  @include outline-focus(var(--color-secondary));
+  @include outline-focus($color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: toRem(16px 20px 18px);
-  font-size: var(--button-base-font-size);
+  font-size: $button-base-font-size;
   font-family: inherit;
   color: #fff;
-  background-color: var(--color-primary);
+  background-color: $color-primary;
   border: none;
-  border-radius: var(--button-border-radius);
+  border-radius: $button-border-radius;
   cursor: pointer;
   appearance: none;
   text-decoration: none;
@@ -26,7 +26,7 @@
   }
 
   &--icon {
-    border-radius: var(--button-icon-size);
+    border-radius: $button-icon-size;
     padding: toRem(16px);
   }
 
@@ -53,7 +53,7 @@
 
   &--accent,
   &--tertiary {
-    color: var(--color-secondary-dark);
+    color: $color-secondary-dark;
   }
 
   &--primary {
@@ -63,19 +63,19 @@
   }
 
   &--secondary {
-    background-color: var(--color-secondary);
+    background-color: $color-secondary;
 
     &:hover {
       background: linear-gradient(
-        var(--color-secondary-light),
-        var(--color-secondary)
+        $color-secondary-light,
+        $color-secondary
       );
     }
 
     &:active {
       background: linear-gradient(
-        var(--color-secondary),
-        var(--color-secondary-light)
+        $color-secondary,
+        $color-secondary-light
       );
     }
 
@@ -85,45 +85,45 @@
   }
 
   &--accent {
-    background-color: var(--color-accent);
+    background-color: $color-accent;
 
     &:hover {
       background: linear-gradient(
-        var(--color-accent-light),
-        var(--color-accent)
+        $color-accent-light,
+        $color-accent
       );
     }
 
     &:active {
       background: linear-gradient(
-        var(--color-accent),
-        var(--color-accent-light)
+        $color-accent,
+        $color-accent-light
       );
       box-shadow: inset toRem(0px 2px 3px) rgba(#000, 0.15);
     }
   }
 
   &--tertiary {
-    background-color: var(--color-tertiary);
+    background-color: $color-tertiary;
 
     &:hover {
       background: linear-gradient(
-        var(--color-tertiary),
-        var(--color-tertiary-dark)
+        $color-tertiary,
+        $color-tertiary-dark
       );
     }
 
     &:active {
       background: linear-gradient(
-        var(--color-tertiary-dark),
-        var(--color-tertiary)
+        $color-tertiary-dark,
+        $color-tertiary
       );
     }
   }
 
   &--transparent {
     background-color: transparent;
-    color: var(--color-secondary-dark);
+    color: $color-secondary-dark;
     padding: toRem(10px);
 
     &:active {

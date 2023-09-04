@@ -27,16 +27,16 @@
     width: 100%;
     line-height: 1.25;
     border-radius: toRem(5px);
-    border: solid toRem(1px) var(--color-secondary-light);
+    border: solid toRem(1px) $color-secondary-light;
     background-color: #fff;
 
     &::placeholder {
-      color: var(--color-secondary-light);
+      color: $color-secondary-light;
       opacity: 0.8;
       font-style: italic;
     }
 
-    @include outline-focus(var(--color-secondary-light));
+    @include outline-focus($color-secondary-light);
 
     &--icon-left {
       padding-left: toRem(46px);

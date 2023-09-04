@@ -63,7 +63,7 @@ const Select: FC<SelectProps> = ({
           ) : (
             <IconsLibrary
               symbol="arr-down"
-              fill="var(--color-secondary)"
+              fill="$color-secondary"
             ></IconsLibrary>
           )}
         </span>

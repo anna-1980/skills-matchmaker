@@ -15,7 +15,7 @@
   flex-wrap: wrap;
 
   &__heading {
-    color: var(--color-secondary-dark);
+    color: $color-secondary-dark;
   }
 
   &__btn {
@@ -33,6 +33,17 @@
 
   &__category-list {
     flex-basis: 100%; 
+  }
+}
+
+.logout-container {
+  display: flex;
+  justify-content: flex-end;
+
+  .logout-button {
+    @include breakpoint($layout-shift) {
+      min-width: auto;
+    }
   }
 }
 

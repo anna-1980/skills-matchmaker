@@ -21,7 +21,7 @@ export default async function Home({}) {
   }
 
   const { categories = {} } = await getCategories();
-  
+
   return (
     <main>
       <h1 className={styles["logout-greeting"]}>
@@ -52,7 +52,7 @@ export default async function Home({}) {
                 <IconsLibrary
                   symbol="add"
                   size="20px"
-                  fill="var(--color-secondary-dark)"
+                  fill="$color-secondary-dark"
                 />
               }
             >

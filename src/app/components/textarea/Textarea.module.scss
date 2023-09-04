@@ -8,14 +8,14 @@
     font-family: inherit;
     width: 100%;
     border-radius: toRem(5px);
-    border: solid toRem(1px) var(--color-secondary-light);
+    border: solid toRem(1px) $color-secondary-light;
 
     &::placeholder {
-      color: var(--color-secondary-light);
+      color: $color-secondary-light;
       opacity: 0.8;
       font-style: italic;
     }
 
-    @include outline-focus(var(--color-secondary-light));
+    @include outline-focus($color-secondary-light);
   }
 }

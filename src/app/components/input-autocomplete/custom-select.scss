@@ -15,14 +15,14 @@
     }
 
     &__placeholder {
-      color: var(--color-secondary-light);
+      color: $color-secondary-light;
       opacity: 0.8;
       font-style: italic;
     }
 
     &__control {
       border-radius: toRem(5px);
-      border: solid toRem(1px) var(--color-secondary-light);
+      border: solid toRem(1px) $color-secondary-light;
       width: 100%;
       padding: toRem(10px 16px);
       background-color: white;
@@ -31,7 +31,7 @@
       &--menu-is-open {
         border: transparent;
         outline: none;
-        border: solid toRem(1px) var(--color-secondary-light);
+        border: solid toRem(1px) $color-secondary-light;
       }
 
       &:hover {
@@ -48,7 +48,7 @@
           position: absolute;
           left: 0;
           border-radius: toRem(5px);
-          outline: toRem(2px) dashed var(--color-secondary-light);
+          outline: toRem(2px) dashed $color-secondary-light;
           outline-offset: toRem(-4px);
         }
 
@@ -66,12 +66,12 @@
     }
 
     &__option--is-focused {
-      background-color: var(--color-secondary-light);
+      background-color: $color-secondary-light;
       color: white;
     }
 
     &__option--is-selected {
-      background-color: var(--color-secondary-light);
+      background-color: $color-secondary-light;
       color: white;
     }
 

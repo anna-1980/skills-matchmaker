@@ -55,7 +55,7 @@ const SearchCardHeader = ({
             <IconsLibrary
               symbol={toggleCard ? "arr-up" : "arr-down"}
               size="26px"
-              fill="var(--color-secondary-dark)"
+              fill="$color-secondary-dark"
             />
           }
         />

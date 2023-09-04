@@ -16,9 +16,7 @@ const LogOutButton = ({ className }: LogOutButtonProps) => {
       priority="tertiary"
       expanded
       size="medium"
-      iconL={
-        <IconsLibrary symbol="exit" size="24px" fill="var(--color-secondary)" />
-      }
+      iconL={<IconsLibrary symbol="exit" size="24px" fill="$color-secondary" />}
     >
       Logout
     </Button>

@@ -9,26 +9,26 @@ const LevelIndicator = (props: { skillLevel: number; className?: string }) => {
         <IconsLibrary
           symbol="star-full"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       ) : (
         <IconsLibrary
           symbol="star-empty"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       )}
       {props.skillLevel >= 2 ? (
         <IconsLibrary
           symbol="star-full"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       ) : (
         <IconsLibrary
           symbol="star-empty"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       )}
 
@@ -36,13 +36,13 @@ const LevelIndicator = (props: { skillLevel: number; className?: string }) => {
         <IconsLibrary
           symbol="star-full"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       ) : (
         <IconsLibrary
           symbol="star-empty"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       )}
 
@@ -50,26 +50,26 @@ const LevelIndicator = (props: { skillLevel: number; className?: string }) => {
         <IconsLibrary
           symbol="star-full"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       ) : (
         <IconsLibrary
           symbol="star-empty"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       )}
       {props.skillLevel >= 5 ? (
         <IconsLibrary
           symbol="star-full"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       ) : (
         <IconsLibrary
           symbol="star-empty"
           size={iconSize}
-          fill="var(--color-secondary-dark)"
+          fill="$color-secondary-dark"
         />
       )}
     </div>
